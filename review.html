@@ -622,8 +622,15 @@ async function init() {
   } catch(e) {
     allQuestions = FALLBACK;
   }
-  // Deep copy so we can discard
+  updateCounts();
   applyFilter();
+}
+
+function updateCounts() {
+  document.getElementById('total-count').textContent  = allQuestions.length;
+  document.getElementById('count-easy').textContent   = allQuestions.filter(q => q.difficulty === 'Easy').length;
+  document.getElementById('count-medium').textContent = allQuestions.filter(q => q.difficulty === 'Medium').length;
+  document.getElementById('count-hard').textContent   = allQuestions.filter(q => q.difficulty === 'Hard').length;
 }
 
 function setDiff(btn) {
@@ -813,6 +820,7 @@ function saveChanges() {
 
   allQuestions[globalIdx] = updated;
   filtered[currentIndex]  = updated;
+  updateCounts();
   setDirty(false);
 }
 
@@ -849,7 +857,15 @@ function jumpTo() {
 // Export
 function openExport() {
   if (isDirty) {
-    if (!confirm('You have unsaved changes on this question. Export anyway (current edits will NOT be included)?')) return;
+    const save = confirm(
+      '⚠ You have unsaved changes on this question.
+
+' +
+      'Click OK to save this question first, then export.
+' +
+      'Click Cancel to export without saving these changes.'
+    );
+    if (save) saveChanges();
   }
   document.getElementById('export-textarea').value = JSON.stringify(allQuestions, null, 2);
   document.getElementById('export-modal').classList.add('visible');
