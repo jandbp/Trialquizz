@@ -31,7 +31,7 @@
     "id": "NST-003",
     "category": "Judging & Scoring",
     "difficulty": "Easy",
-    "question": "What is the maximum starting score in a National Sheep Dog Trial run?",
+    "question": "What is the starting score in a National Sheep Dog Trial run?",
     "options": [
       "50",
       "75",
@@ -91,11 +91,11 @@
     "options": [
       "The sheep crossing a bridge",
       "The handler changing sides",
-      "The dog crossing the sheep's line incorrectly",
+      "The dog passes between the handler and the sheep.",
       "Two dogs swapping handlers"
     ],
     "correctAnswer": 2,
-    "explanation": "Crossing occurs when the dog cuts across the sheep's line from the wrong side."
+    "explanation": "Crossing occurs when the dog passes between the handler and the sheep."
   },
   {
     "id": "NST-008",
