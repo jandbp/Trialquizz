@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Question Review — National Sheepdog Trials Quiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-dark: #27500A;
+    --green-mid: #3B6D11;
+    --green-light: #EAF3DE;
+    --green-accent: #639922;
+    --amber: #BA7517;
+    --amber-light: #FAEEDA;
+    --cream: #FAF8F2;
+    --paper: #F4F1E8;
+    --ink: #1a1a14;
+    --ink-muted: #5F5E5A;
+    --red: #A32D2D;
+    --red-light: #FCEBEB;
+    --border: #D3D1C7;
+    --radius: 12px;
+  }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .page-wrap { max-width: 700px; margin: 0 auto; }
+
+  header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--green-light);
+    color: var(--green-dark);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--green-dark);
+    line-height: 1.15;
+  }
+
+  .sub { color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.3rem; }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--green-mid);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1.5px solid var(--green-mid);
+    border-radius: var(--radius);
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+  .back-link:hover { background: var(--green-mid); color: #fff; }
+
+  /* Controls */
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1.25rem;
+    align-items: center;
+  }
+
+  .filter-btn {
+    padding: 0.4rem 0.9rem;
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    background: var(--paper);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.83rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--ink-muted);
+    transition: all 0.15s;
+  }
+  .filter-btn:hover { border-color: var(--green-accent); color: var(--green-dark); }
+  .filter-btn.active { background: var(--green-mid); border-color: var(--green-mid); color: #fff; }
+
+  .search-wrap { margin-left: auto; }
+  .search-input {
+    padding: 0.45rem 0.9rem;
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    background: #fff;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.88rem;
+    color: var(--ink);
+    width: 200px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .search-input:focus { border-color: var(--green-accent); }
+  .search-input::placeholder { color: var(--ink-muted); }
+
+  /* Progress */
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .progress-label {
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+    white-space: nowrap;
+    min-width: 90px;
+  }
+
+  .progress-bar-wrap {
+    flex: 1;
+    background: var(--paper);
+    border-radius: 99px;
+    height: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: var(--green-accent);
+    border-radius: 99px;
+    transition: width 0.35s ease;
+  }
+
+  /* Card */
+  .q-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    margin-bottom: 1.25rem;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.2s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .q-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+    background: var(--paper);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .diff-badge {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 9px;
+    border-radius: 20px;
+  }
+  .diff-Easy   { background: var(--green-light); color: var(--green-dark); }
+  .diff-Medium { background: var(--amber-light); color: var(--amber); }
+  .diff-Hard   { background: var(--red-light); color: var(--red); }
+
+  .cat-badge {
+    font-size: 10px;
+    color: var(--ink-muted);
+    background: var(--paper);
+    padding: 2px 9px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+  }
+
+  .q-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    flex: 1;
+  }
+
+  .options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 1.25rem;
+  }
+
+  .opt-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.7rem 1rem;
+    border-radius: 9px;
+    border: 1.5px solid var(--border);
+    background: var(--paper);
+    font-size: 0.93rem;
+  }
+
+  .opt-row.correct-ans {
+    border-color: var(--green-mid);
+    background: var(--green-light);
+  }
+
+  .opt-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--border);
+    color: var(--ink-muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .opt-row.correct-ans .opt-letter { background: var(--green-mid); color: #fff; }
+  .opt-text { flex: 1; }
+  .correct-tick { color: var(--green-mid); font-weight: 700; font-size: 0.85rem; white-space: nowrap; }
+
+  .explanation {
+    background: var(--green-light);
+    border-left: 3px solid var(--green-mid);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: var(--green-dark);
+    line-height: 1.55;
+  }
+
+  .explanation strong {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 3px;
+    color: var(--green-mid);
+  }
+
+  /* Navigation */
+  .nav-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.75rem 1.5rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    background: #fff;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--ink);
+    transition: all 0.15s;
+  }
+
+  .nav-btn:hover:not(:disabled) {
+    border-color: var(--green-mid);
+    background: var(--green-light);
+    color: var(--green-dark);
+  }
+
+  .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  .nav-btn.primary {
+    background: var(--green-mid);
+    border-color: var(--green-mid);
+    color: #fff;
+    margin-left: auto;
+  }
+
+  .nav-btn.primary:hover:not(:disabled) {
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+  }
+
+  .nav-counter {
+    flex: 1;
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+  }
+
+  /* Jump */
+  .jump-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 0.85rem;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+  }
+
+  .jump-input {
+    width: 58px;
+    padding: 0.3rem 0.5rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.85rem;
+    text-align: center;
+    outline: none;
+    background: #fff;
+    color: var(--ink);
+  }
+  .jump-input:focus { border-color: var(--green-accent); }
+
+  .jump-btn {
+    padding: 0.3rem 0.8rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--paper);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.83rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--ink-muted);
+    transition: all 0.15s;
+  }
+  .jump-btn:hover { border-color: var(--green-accent); color: var(--green-dark); }
+
+  .keyboard-hint {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    margin-top: 0.6rem;
+    opacity: 0.7;
+  }
+
+  /* Empty */
+  .empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--ink-muted);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 1.25rem;
+  }
+  .empty-state .icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+
+  @media (max-width: 520px) {
+    .search-wrap { margin-left: 0; width: 100%; }
+    .search-input { width: 100%; }
+    .q-card { padding: 1.25rem; min-height: auto; }
+    .nav-btn { padding: 0.65rem 1rem; font-size: 0.88rem; }
+    .keyboard-hint { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header>
+    <div class="header-left">
+      <div class="badge">🐑 Study Mode</div>
+      <h1>Review Questions</h1>
+      <p class="sub">Work through every question one by one</p>
+    </div>
+    <a href="index.html" class="back-link">← Take the Quiz</a>
+  </header>
+
+  <div class="controls">
+    <div id="diff-filters" style="display:flex;gap:6px;flex-wrap:wrap;">
+      <button class="filter-btn active" data-diff="All"    onclick="setDiff(this)">All</button>
+      <button class="filter-btn" data-diff="Easy"   onclick="setDiff(this)">🌱 Easy</button>
+      <button class="filter-btn" data-diff="Medium" onclick="setDiff(this)">🐕 Medium</button>
+      <button class="filter-btn" data-diff="Hard"   onclick="setDiff(this)">🏆 Hard</button>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" type="text" placeholder="🔍 Search…" id="search-input" oninput="applyFilter()">
+    </div>
+  </div>
+
+  <div class="progress-row">
+    <span class="progress-label" id="progress-label">1 of 20</span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="progress-bar" style="width:5%"></div>
+    </div>
+  </div>
+
+  <div id="q-card-wrap"></div>
+
+  <div class="nav-row">
+    <button class="nav-btn" id="prev-btn" onclick="go(-1)">← Previous</button>
+    <span class="nav-counter" id="nav-counter"></span>
+    <button class="nav-btn primary" id="next-btn" onclick="go(1)">Next →</button>
+  </div>
+
+  <div class="jump-row">
+    Jump to question
+    <input class="jump-input" type="number" id="jump-input" min="1" placeholder="1">
+    <button class="jump-btn" onclick="jumpTo()">Go</button>
+  </div>
+
+  <p class="keyboard-hint">Tip: use ← → arrow keys to navigate</p>
+
+</div>
+
+<script>
+const QUESTIONS_URL = 'questions.json';
+const LETTERS = ['A','B','C','D'];
+
+let allQuestions = [];
+let filtered = [];
+let currentIndex = 0;
+let activeDiff = 'All';
+
+const FALLBACK = [{"id":"NST-001","category":"Trial Basics","difficulty":"Easy","question":"How many sheep are used in an Australian three sheep dog trial?","options":["2","3","5","6"],"correctAnswer":1,"explanation":"Australian three sheep trials use three sheep."}];
+
+async function init() {
+  try {
+    const res = await fetch(QUESTIONS_URL);
+    allQuestions = await res.json();
+  } catch(e) {
+    allQuestions = FALLBACK;
+  }
+  applyFilter();
+}
+
+function setDiff(btn) {
+  document.querySelectorAll('#diff-filters .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeDiff = btn.dataset.diff;
+  applyFilter();
+}
+
+function applyFilter() {
+  const search = document.getElementById('search-input').value.trim().toLowerCase();
+  filtered = allQuestions.filter(q => {
+    const diffOk = activeDiff === 'All' || q.difficulty === activeDiff;
+    const searchOk = !search ||
+      q.question.toLowerCase().includes(search) ||
+      q.category.toLowerCase().includes(search) ||
+      q.options.some(o => o.toLowerCase().includes(search)) ||
+      (q.explanation || '').toLowerCase().includes(search);
+    return diffOk && searchOk;
+  });
+  currentIndex = 0;
+  render();
+}
+
+function render() {
+  const wrap = document.getElementById('q-card-wrap');
+
+  if (filtered.length === 0) {
+    wrap.innerHTML = `
+      <div class="empty-state">
+        <div class="icon">🐑</div>
+        <p>No questions match your filter.</p>
+      </div>`;
+    document.getElementById('progress-label').textContent = '0 questions';
+    document.getElementById('progress-bar').style.width = '0%';
+    document.getElementById('prev-btn').disabled = true;
+    document.getElementById('next-btn').disabled = true;
+    document.getElementById('nav-counter').textContent = '';
+    return;
+  }
+
+  const q = filtered[currentIndex];
+  const total = filtered.length;
+  const pos = currentIndex + 1;
+
+  document.getElementById('progress-label').textContent = `${pos} of ${total}`;
+  document.getElementById('progress-bar').style.width = `${(pos / total) * 100}%`;
+  document.getElementById('prev-btn').disabled = currentIndex === 0;
+  document.getElementById('next-btn').disabled = currentIndex === total - 1;
+  document.getElementById('next-btn').textContent = currentIndex === total - 1 ? '✓ All done!' : 'Next →';
+  document.getElementById('nav-counter').textContent = `${pos} / ${total}`;
+  document.getElementById('jump-input').max = total;
+  document.getElementById('jump-input').placeholder = pos;
+
+  wrap.innerHTML = `
+    <div class="q-card">
+      <div class="card-meta">
+        <span class="q-id">${q.id}</span>
+        <span class="diff-badge diff-${q.difficulty}">${q.difficulty}</span>
+        <span class="cat-badge">${q.category}</span>
+      </div>
+      <p class="q-text">${q.question}</p>
+      <div class="options-list">
+        ${q.options.map((opt, i) => `
+          <div class="opt-row ${i === q.correctAnswer ? 'correct-ans' : ''}">
+            <span class="opt-letter">${LETTERS[i]}</span>
+            <span class="opt-text">${opt}</span>
+            ${i === q.correctAnswer ? '<span class="correct-tick">✓ Correct</span>' : ''}
+          </div>
+        `).join('')}
+      </div>
+      <div class="explanation">
+        <strong>Explanation</strong>
+        ${q.explanation}
+      </div>
+    </div>`;
+}
+
+function go(dir) {
+  const next = currentIndex + dir;
+  if (next >= 0 && next < filtered.length) {
+    currentIndex = next;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function jumpTo() {
+  const val = parseInt(document.getElementById('jump-input').value, 10);
+  if (!isNaN(val) && val >= 1 && val <= filtered.length) {
+    currentIndex = val - 1;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  document.getElementById('jump-input').value = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT') return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') go(1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   go(-1);
+});
+
+init();
+</script>
+</body>
+</html>
