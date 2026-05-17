@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National Sheepdog Trials Quiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-dark: #27500A;
+    --green-mid: #3B6D11;
+    --green-light: #EAF3DE;
+    --green-accent: #639922;
+    --amber: #BA7517;
+    --amber-light: #FAEEDA;
+    --cream: #FAF8F2;
+    --paper: #F4F1E8;
+    --ink: #1a1a14;
+    --ink-muted: #5F5E5A;
+    --red: #A32D2D;
+    --red-light: #FCEBEB;
+    --border: #D3D1C7;
+    --radius: 12px;
+  }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem 4rem;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .header-badge {
+    display: inline-block;
+    background: var(--green-light);
+    color: var(--green-dark);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--green-dark);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    color: var(--ink-muted);
+    font-size: 1rem;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    width: 100%;
+    max-width: 640px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  /* ── SCREEN: Start ── */
+  #screen-start { display: block; }
+  #screen-quiz, #screen-result { display: none; }
+
+  .level-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .level-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 1.25rem 0.75rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--paper);
+    cursor: pointer;
+    transition: border-color 0.18s, background 0.18s, transform 0.1s;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .level-btn:hover { background: var(--green-light); border-color: var(--green-accent); }
+
+  .level-btn.selected {
+    background: var(--green-light);
+    border-color: var(--green-dark);
+  }
+
+  .level-btn .icon { font-size: 1.75rem; }
+  .level-btn .name { font-weight: 600; font-size: 0.95rem; color: var(--ink); }
+  .level-btn .desc { font-size: 0.78rem; color: var(--ink-muted); text-align: center; }
+
+  .start-btn {
+    width: 100%;
+    padding: 0.9rem;
+    background: var(--green-mid);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.1s;
+  }
+
+  .start-btn:hover { background: var(--green-dark); transform: translateY(-1px); }
+  .start-btn:active { transform: translateY(0); }
+  .start-btn:disabled { background: var(--border); cursor: not-allowed; transform: none; }
+
+  /* ── SCREEN: Quiz ── */
+  .quiz-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+  }
+
+  .progress-bar-wrap {
+    background: var(--paper);
+    border-radius: 99px;
+    height: 6px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: var(--green-accent);
+    border-radius: 99px;
+    transition: width 0.4s ease;
+  }
+
+  .q-category {
+    display: inline-block;
+    background: var(--amber-light);
+    color: var(--amber);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+  }
+
+  .q-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    line-height: 1.45;
+    margin-bottom: 1.75rem;
+    color: var(--ink);
+  }
+
+  .options-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .option-btn {
+    width: 100%;
+    text-align: left;
+    padding: 0.85rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: var(--paper);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.97rem;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+  }
+
+  .option-btn .opt-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--border);
+    color: var(--ink-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .option-btn:hover:not(:disabled) { border-color: var(--green-accent); background: var(--green-light); }
+  .option-btn:hover:not(:disabled) .opt-letter { background: var(--green-accent); color: #fff; }
+
+  .option-btn.correct { border-color: var(--green-mid); background: var(--green-light); }
+  .option-btn.correct .opt-letter { background: var(--green-mid); color: #fff; }
+
+  .option-btn.incorrect { border-color: var(--red); background: var(--red-light); }
+  .option-btn.incorrect .opt-letter { background: var(--red); color: #fff; }
+
+  .option-btn:disabled { cursor: default; }
+
+  .explanation-box {
+    margin-top: 1.25rem;
+    padding: 0.85rem 1rem;
+    background: var(--green-light);
+    border-left: 3px solid var(--green-mid);
+    border-radius: 0 8px 8px 0;
+    font-size: 0.9rem;
+    color: var(--green-dark);
+    line-height: 1.55;
+    display: none;
+  }
+
+  .explanation-box.visible { display: block; }
+
+  .next-btn {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--green-mid);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: none;
+    transition: background 0.15s;
+  }
+
+  .next-btn.visible { display: block; }
+  .next-btn:hover { background: var(--green-dark); }
+
+  /* ── SCREEN: Result ── */
+  .score-display {
+    text-align: center;
+    padding: 1.5rem 0 1rem;
+  }
+
+  .score-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid var(--green-mid);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    background: var(--green-light);
+  }
+
+  .score-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--green-dark);
+    line-height: 1;
+  }
+
+  .score-denom { font-size: 0.85rem; color: var(--green-mid); font-weight: 600; }
+
+  .score-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  .score-sub { font-size: 0.92rem; color: var(--ink-muted); margin-bottom: 1.75rem; }
+
+  .answers-review { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.75rem; }
+
+  .answer-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+
+  .answer-row.ok { background: var(--green-light); border-color: #C0DD97; }
+  .answer-row.bad { background: var(--red-light); border-color: #F7C1C1; }
+
+  .answer-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+  .answer-q { font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+  .answer-detail { color: var(--ink-muted); font-size: 0.83rem; }
+
+  .play-again-btn {
+    width: 100%;
+    padding: 0.9rem;
+    background: var(--green-mid);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .play-again-btn:hover { background: var(--green-dark); }
+
+  @media (max-width: 480px) {
+    .level-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 1.75rem; }
+    .card { padding: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-badge">🐑 Australia</div>
+  <h1>National Sheepdog<br>Trials Quiz</h1>
+  <p class="subtitle">Test your knowledge of competitive sheep dog trialling</p>
+</header>
+
+<!-- START SCREEN -->
+<div class="card" id="screen-start">
+  <p style="font-weight:600; margin-bottom:0.25rem;">Choose your difficulty</p>
+  <p style="font-size:0.88rem; color:var(--ink-muted); margin-bottom:0;">You'll get 10 random questions at your chosen level.</p>
+
+  <div class="level-grid">
+    <button class="level-btn" data-level="Easy" onclick="selectLevel(this)">
+      <span class="icon">🌱</span>
+      <span class="name">Novice</span>
+      <span class="desc">Easy questions — great for beginners</span>
+    </button>
+    <button class="level-btn" data-level="Medium" onclick="selectLevel(this)">
+      <span class="icon">🐕</span>
+      <span class="name">Handler</span>
+      <span class="desc">Medium — you know your way around</span>
+    </button>
+    <button class="level-btn" data-level="Hard" onclick="selectLevel(this)">
+      <span class="icon">🏆</span>
+      <span class="name">Champion</span>
+      <span class="desc">Hard — trial expert territory</span>
+    </button>
+  </div>
+
+  <button class="start-btn" id="start-btn" onclick="startQuiz()" disabled>Select a difficulty to begin</button>
+</div>
+
+<!-- QUIZ SCREEN -->
+<div class="card" id="screen-quiz">
+  <div class="quiz-meta">
+    <span id="q-counter">Question 1 of 10</span>
+    <span id="q-difficulty"></span>
+  </div>
+  <div class="progress-bar-wrap">
+    <div class="progress-bar-fill" id="progress-bar" style="width:10%"></div>
+  </div>
+  <div class="q-category" id="q-category"></div>
+  <p class="q-text" id="q-text"></p>
+  <ul class="options-list" id="options-list"></ul>
+  <div class="explanation-box" id="explanation-box"></div>
+  <button class="next-btn" id="next-btn" onclick="nextQuestion()">Next question →</button>
+</div>
+
+<!-- RESULT SCREEN -->
+<div class="card" id="screen-result">
+  <div class="score-display">
+    <div class="score-circle">
+      <span class="score-number" id="final-score">0</span>
+      <span class="score-denom">out of 10</span>
+    </div>
+    <div class="score-label" id="score-label"></div>
+    <div class="score-sub" id="score-sub"></div>
+  </div>
+  <div class="answers-review" id="answers-review"></div>
+  <button class="play-again-btn" onclick="resetQuiz()">🔄 Play again</button>
+</div>
+
+<script>
+const QUESTIONS_URL = 'questions.json';
+
+let allQuestions = [];
+let sessionQuestions = [];
+let currentIndex = 0;
+let score = 0;
+let selectedLevel = null;
+let answers = [];
+
+async function loadQuestions() {
+  try {
+    const res = await fetch(QUESTIONS_URL);
+    allQuestions = await res.json();
+  } catch (e) {
+    allQuestions = FALLBACK;
+  }
+}
+
+function selectLevel(btn) {
+  document.querySelectorAll('.level-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedLevel = btn.dataset.level;
+  const startBtn = document.getElementById('start-btn');
+  startBtn.disabled = false;
+  startBtn.textContent = 'Start Quiz →';
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startQuiz() {
+  if (!selectedLevel) return;
+
+  let pool = allQuestions.filter(q => q.difficulty === selectedLevel);
+
+  if (pool.length < 10) {
+    const extras = shuffle(allQuestions.filter(q => q.difficulty !== selectedLevel));
+    pool = [...pool, ...extras.slice(0, 10 - pool.length)];
+  }
+
+  sessionQuestions = shuffle(pool).slice(0, 10);
+  currentIndex = 0;
+  score = 0;
+  answers = [];
+
+  show('screen-quiz');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = sessionQuestions[currentIndex];
+  const total = sessionQuestions.length;
+
+  document.getElementById('q-counter').textContent = `Question ${currentIndex + 1} of ${total}`;
+  document.getElementById('q-difficulty').textContent = q.difficulty;
+  document.getElementById('progress-bar').style.width = `${((currentIndex + 1) / total) * 100}%`;
+  document.getElementById('q-category').textContent = q.category;
+  document.getElementById('q-text').textContent = q.question;
+
+  const letters = ['A', 'B', 'C', 'D'];
+  const list = document.getElementById('options-list');
+  list.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const li = document.createElement('li');
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerHTML = `<span class="opt-letter">${letters[i]}</span> ${opt}`;
+    btn.onclick = () => handleAnswer(i, q);
+    li.appendChild(btn);
+    list.appendChild(li);
+  });
+
+  document.getElementById('explanation-box').classList.remove('visible');
+  document.getElementById('explanation-box').textContent = '';
+  document.getElementById('next-btn').classList.remove('visible');
+}
+
+function handleAnswer(chosen, q) {
+  const buttons = document.querySelectorAll('.option-btn');
+  buttons.forEach(b => b.disabled = true);
+
+  const correct = q.correctAnswer;
+  buttons[correct].classList.add('correct');
+
+  const isCorrect = chosen === correct;
+  if (isCorrect) {
+    score++;
+  } else {
+    buttons[chosen].classList.add('incorrect');
+  }
+
+  answers.push({ q, chosen, isCorrect });
+
+  const box = document.getElementById('explanation-box');
+  box.textContent = q.explanation;
+  box.classList.add('visible');
+
+  const nextBtn = document.getElementById('next-btn');
+  nextBtn.textContent = currentIndex + 1 < sessionQuestions.length ? 'Next question →' : 'See my results →';
+  nextBtn.classList.add('visible');
+}
+
+function nextQuestion() {
+  currentIndex++;
+  if (currentIndex < sessionQuestions.length) {
+    renderQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  show('screen-result');
+
+  document.getElementById('final-score').textContent = score;
+
+  const pct = score / sessionQuestions.length;
+  let label, sub;
+  if (pct === 1)       { label = '🏆 Perfect score!';            sub = 'You\'re a true trialling champion.'; }
+  else if (pct >= 0.8) { label = '🐕 Outstanding work!';         sub = 'You clearly know the sport well.'; }
+  else if (pct >= 0.6) { label = '👍 Solid effort';              sub = 'Good foundation — keep learning!'; }
+  else if (pct >= 0.4) { label = '🌱 Room to grow';              sub = 'Read up on the rules and try again.'; }
+  else                 { label = '🐑 The sheep got away…';        sub = 'Have another crack — you\'ll do better!'; }
+
+  document.getElementById('score-label').textContent = label;
+  document.getElementById('score-sub').textContent = sub;
+
+  const review = document.getElementById('answers-review');
+  review.innerHTML = '';
+  answers.forEach(({ q, chosen, isCorrect }) => {
+    const row = document.createElement('div');
+    row.className = `answer-row ${isCorrect ? 'ok' : 'bad'}`;
+    row.innerHTML = `
+      <span class="answer-icon">${isCorrect ? '✅' : '❌'}</span>
+      <div>
+        <div class="answer-q">${q.question}</div>
+        <div class="answer-detail">
+          ${isCorrect
+            ? `Correct: ${q.options[q.correctAnswer]}`
+            : `Your answer: ${q.options[chosen]} · Correct: ${q.options[q.correctAnswer]}`}
+        </div>
+      </div>`;
+    review.appendChild(row);
+  });
+}
+
+function resetQuiz() {
+  selectedLevel = null;
+  document.querySelectorAll('.level-btn').forEach(b => b.classList.remove('selected'));
+  const startBtn = document.getElementById('start-btn');
+  startBtn.disabled = true;
+  startBtn.textContent = 'Select a difficulty to begin';
+  show('screen-start');
+}
+
+function show(id) {
+  ['screen-start', 'screen-quiz', 'screen-result'].forEach(s => {
+    document.getElementById(s).style.display = s === id ? 'block' : 'none';
+  });
+}
+
+const FALLBACK = [{"id":"NST-001","category":"Trial Basics","difficulty":"Easy","question":"How many sheep are used in an Australian three sheep dog trial?","options":["2","3","5","6"],"correctAnswer":1,"explanation":"Australian three sheep trials use three sheep."},{"id":"NST-002","category":"Trial Basics","difficulty":"Easy","question":"What is the first phase of the trial called?","options":["Drive","Fetch","Lift","Outrun"],"correctAnswer":3,"explanation":"The outrun is the first stage where the dog runs out to gather the sheep."}];
+
+loadQuestions();
+</script>
+</body>
+</html>

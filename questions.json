@@ -1,0 +1,242 @@
+[
+  {
+    "id": "NST-001",
+    "category": "Trial Basics",
+    "difficulty": "Easy",
+    "question": "How many sheep are used in an Australian three sheep dog trial?",
+    "options": ["2", "3", "5", "6"],
+    "correctAnswer": 1,
+    "explanation": "Australian three sheep trials use three sheep."
+  },
+  {
+    "id": "NST-002",
+    "category": "Trial Basics",
+    "difficulty": "Easy",
+    "question": "What is the first phase of the trial called?",
+    "options": ["Drive", "Fetch", "Lift", "Outrun"],
+    "correctAnswer": 3,
+    "explanation": "The outrun is the first stage where the dog runs out to gather the sheep."
+  },
+  {
+    "id": "NST-003",
+    "category": "Judging & Scoring",
+    "difficulty": "Easy",
+    "question": "What is the maximum starting score in a National Sheep Dog Trial run?",
+    "options": ["50", "75", "100", "120"],
+    "correctAnswer": 2,
+    "explanation": "Competitors begin with 100 points before deductions are applied."
+  },
+  {
+    "id": "NST-004",
+    "category": "Trial Basics",
+    "difficulty": "Easy",
+    "question": "What is the 'lift'?",
+    "options": [
+      "Moving sheep through the pen",
+      "The first movement of sheep after gathering",
+      "Crossing the bridge",
+      "The handler moving position"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lift is the dog's first controlled movement of the sheep."
+  },
+  {
+    "id": "NST-005",
+    "category": "Judging & Scoring",
+    "difficulty": "Easy",
+    "question": "What does a judge mainly assess during a run?",
+    "options": [
+      "The dog's speed",
+      "The handler's whistle style",
+      "The control and line of the sheep",
+      "The breed of sheep"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Judges primarily assess the movement and control of the sheep."
+  },
+  {
+    "id": "NST-006",
+    "category": "Dog Work & Handling",
+    "difficulty": "Medium",
+    "question": "What is meant by a 'wide outrun'?",
+    "options": [
+      "The sheep are spread apart",
+      "The dog gives the sheep plenty of room while gathering",
+      "The handler walks widely",
+      "The sheep move quickly"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A wide outrun avoids disturbing the sheep."
+  },
+  {
+    "id": "NST-007",
+    "category": "Judging & Scoring",
+    "difficulty": "Medium",
+    "question": "What is 'crossing'?",
+    "options": [
+      "The sheep crossing a bridge",
+      "The handler changing sides",
+      "The dog crossing the sheep's line incorrectly",
+      "Two dogs swapping handlers"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Crossing occurs when the dog cuts across the sheep's line from the wrong side."
+  },
+  {
+    "id": "NST-008",
+    "category": "Trial Basics",
+    "difficulty": "Easy",
+    "question": "What follows the lift?",
+    "options": ["Pen", "Fetch", "Bridge", "Race"],
+    "correctAnswer": 1,
+    "explanation": "After the lift, the dog fetches the sheep toward the handler."
+  },
+  {
+    "id": "NST-009",
+    "category": "Judging & Scoring",
+    "difficulty": "Medium",
+    "question": "What usually causes deductions during the fetch?",
+    "options": [
+      "Straight movement",
+      "Quiet sheep",
+      "Sheep off line",
+      "Wide outrun"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Judges deduct points when sheep drift off the ideal line."
+  },
+  {
+    "id": "NST-010",
+    "category": "Dog Work & Handling",
+    "difficulty": "Medium",
+    "question": "What does a dog showing good 'balance' do?",
+    "options": [
+      "Keeps sheep balanced toward the handler",
+      "Runs quickly around sheep",
+      "Stops constantly",
+      "Avoids whistles"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Balance refers to the dog's natural positioning to control sheep."
+  },
+  {
+    "id": "NST-011",
+    "category": "Trial Basics",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the pen?",
+    "options": [
+      "To test speed",
+      "To separate sheep",
+      "To test close control",
+      "To rest the sheep"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The pen tests calm and accurate close control."
+  },
+  {
+    "id": "NST-012",
+    "category": "Rules & Regulations",
+    "difficulty": "Medium",
+    "question": "What generally happens if the sheep miss an obstacle completely?",
+    "options": [
+      "No deduction",
+      "Minor deduction only",
+      "Heavy deduction or loss of points for that section",
+      "Automatic win"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Missing an obstacle usually results in substantial point loss."
+  },
+  {
+    "id": "NST-013",
+    "category": "Sheep Behaviour",
+    "difficulty": "Medium",
+    "question": "Why is calm sheep movement important?",
+    "options": [
+      "It looks slower",
+      "It shows control and low stress",
+      "It reduces course length",
+      "It helps the handler hear whistles"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Good stock handling minimises stress and maintains control."
+  },
+  {
+    "id": "NST-014",
+    "category": "Judging & Scoring",
+    "difficulty": "Medium",
+    "question": "What does 'off line' mean?",
+    "options": [
+      "The handler is silent",
+      "The dog stops working",
+      "The sheep drift away from the ideal path",
+      "The sheep stop moving"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The ideal line is the intended path through the course."
+  },
+  {
+    "id": "NST-015",
+    "category": "Dog Work & Handling",
+    "difficulty": "Hard",
+    "question": "What is 'gripping'?",
+    "options": [
+      "The dog barking",
+      "The dog biting sheep",
+      "The handler holding the gate",
+      "The sheep stopping"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Gripping refers to the dog biting sheep and is penalised."
+  },
+  {
+    "id": "NST-016",
+    "category": "Trial Basics",
+    "difficulty": "Easy",
+    "question": "Which section usually comes after the fetch?",
+    "options": ["Drive", "Pen", "Lift", "Outrun"],
+    "correctAnswer": 0,
+    "explanation": "After the fetch, the drive moves sheep away from the handler."
+  },
+  {
+    "id": "NST-017",
+    "category": "Dog Work & Handling",
+    "difficulty": "Medium",
+    "question": "Why are excessive commands penalised?",
+    "options": [
+      "They delay judging",
+      "They suggest poor control",
+      "They confuse spectators",
+      "They tire the sheep"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Good dogs should work efficiently with minimal commands."
+  },
+  {
+    "id": "NST-018",
+    "category": "Rules & Regulations",
+    "difficulty": "Easy",
+    "question": "What obstacle requires sheep to pass through a narrow fenced lane?",
+    "options": ["Bridge", "Race", "Pen", "Gate"],
+    "correctAnswer": 1,
+    "explanation": "The race is a narrow obstacle requiring accurate sheep movement."
+  },
+  {
+    "id": "NST-019",
+    "category": "Rules & Regulations",
+    "difficulty": "Easy",
+    "question": "What obstacle requires sheep to cross over water or a gully?",
+    "options": ["Race", "Gate", "Bridge", "Pen"],
+    "correctAnswer": 2,
+    "explanation": "The bridge obstacle tests calm sheep handling."
+  },
+  {
+    "id": "NST-020",
+    "category": "Judging & Scoring",
+    "difficulty": "Medium",
+    "question": "What is usually the most difficult phase of the course?",
+    "options": ["Lift", "Drive", "Pen", "Race"],
+    "correctAnswer": 1,
+    "explanation": "The drive is often considered the most technically difficult section."
+  }
+]
