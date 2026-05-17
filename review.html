@@ -7,510 +7,153 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --green-dark: #27500A;
-    --green-mid: #3B6D11;
-    --green-light: #EAF3DE;
-    --green-accent: #639922;
-    --amber: #BA7517;
-    --amber-light: #FAEEDA;
-    --cream: #FAF8F2;
-    --paper: #F4F1E8;
-    --ink: #1a1a14;
-    --ink-muted: #5F5E5A;
-    --red: #A32D2D;
-    --red-light: #FCEBEB;
-    --border: #D3D1C7;
-    --radius: 12px;
-    --blue: #1a5fa8;
-    --blue-light: #e8f0fb;
+    --green-dark: #27500A; --green-mid: #3B6D11; --green-light: #EAF3DE;
+    --green-accent: #639922; --amber: #BA7517; --amber-light: #FAEEDA;
+    --cream: #FAF8F2; --paper: #F4F1E8; --ink: #1a1a14; --ink-muted: #5F5E5A;
+    --red: #A32D2D; --red-light: #FCEBEB; --border: #D3D1C7; --radius: 12px;
+    --blue: #1a5fa8; --blue-light: #e8f0fb;
   }
-
-  body {
-    font-family: 'Source Sans 3', sans-serif;
-    background: var(--cream);
-    color: var(--ink);
-    min-height: 100vh;
-    padding: 2rem 1rem 4rem;
-  }
-
+  body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; padding: 2rem 1rem 4rem; }
   .page-wrap { max-width: 720px; margin: 0 auto; }
 
   /* Header */
-  header {
-    margin-bottom: 2rem;
-  }
-
-  .badge {
-    display: inline-block;
-    background: var(--green-light);
-    color: var(--green-dark);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 3px 12px;
-    border-radius: 20px;
-    margin-bottom: 0.5rem;
-  }
-
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.6rem, 4vw, 2.2rem);
-    color: var(--green-dark);
-    line-height: 1.15;
-  }
-
+  header { margin-bottom: 1.5rem; }
+  .badge { display: inline-block; background: var(--green-light); color: var(--green-dark); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 12px; border-radius: 20px; margin-bottom: 0.5rem; }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.2rem); color: var(--green-dark); line-height: 1.15; }
   .sub { color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.3rem; }
 
-  /* Controls */
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 1.25rem;
-    align-items: center;
+  /* Session banner */
+  .session-banner {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    background: #fff; border: 1.5px solid var(--border); border-radius: var(--radius);
+    padding: 0.75rem 1.1rem; margin-bottom: 1.25rem;
   }
+  .session-banner.has-changes { border-color: var(--amber); background: var(--amber-light); }
+  .session-banner.has-changes .session-label { color: var(--amber); }
+  .session-label { font-weight: 600; font-size: 0.9rem; color: var(--ink-muted); }
+  .session-count {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 26px; height: 26px; padding: 0 6px;
+    border-radius: 99px; background: var(--border); color: var(--ink-muted);
+    font-size: 0.8rem; font-weight: 700;
+  }
+  .session-banner.has-changes .session-count { background: var(--amber); color: #fff; }
+  .session-actions { display: flex; gap: 8px; margin-left: auto; }
 
-  .filter-btn {
-    padding: 0.4rem 0.9rem;
-    border: 1.5px solid var(--border);
-    border-radius: 20px;
-    background: var(--paper);
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.83rem;
-    font-weight: 600;
-    cursor: pointer;
-    color: var(--ink-muted);
-    transition: all 0.15s;
-  }
+  /* Controls */
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.25rem; align-items: center; }
+  .filter-btn { padding: 0.4rem 0.9rem; border: 1.5px solid var(--border); border-radius: 20px; background: var(--paper); font-family: 'Source Sans 3', sans-serif; font-size: 0.83rem; font-weight: 600; cursor: pointer; color: var(--ink-muted); transition: all 0.15s; }
   .filter-btn:hover { border-color: var(--green-accent); color: var(--green-dark); }
   .filter-btn.active { background: var(--green-mid); border-color: var(--green-mid); color: #fff; }
-
   .search-wrap { margin-left: auto; }
-  .search-input {
-    padding: 0.45rem 0.9rem;
-    border: 1.5px solid var(--border);
-    border-radius: 20px;
-    background: #fff;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.88rem;
-    color: var(--ink);
-    width: 200px;
-    outline: none;
-    transition: border-color 0.15s;
-  }
+  .search-input { padding: 0.45rem 0.9rem; border: 1.5px solid var(--border); border-radius: 20px; background: #fff; font-family: 'Source Sans 3', sans-serif; font-size: 0.88rem; color: var(--ink); width: 200px; outline: none; transition: border-color 0.15s; }
   .search-input:focus { border-color: var(--green-accent); }
   .search-input::placeholder { color: var(--ink-muted); }
 
   /* Progress */
-  .progress-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 1rem;
-  }
-
+  .progress-row { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
   .progress-label { font-size: 0.88rem; color: var(--ink-muted); white-space: nowrap; min-width: 90px; }
-
-  .progress-bar-wrap {
-    flex: 1;
-    background: var(--paper);
-    border-radius: 99px;
-    height: 6px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
-
-  .progress-bar-fill {
-    height: 100%;
-    background: var(--green-accent);
-    border-radius: 99px;
-    transition: width 0.35s ease;
-  }
+  .progress-bar-wrap { flex: 1; background: var(--paper); border-radius: 99px; height: 6px; overflow: hidden; border: 1px solid var(--border); }
+  .progress-bar-fill { height: 100%; background: var(--green-accent); border-radius: 99px; transition: width 0.35s ease; }
 
   /* Card */
-  .q-card {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 2rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    margin-bottom: 1.25rem;
-    animation: fadeIn 0.2s ease;
-  }
+  .q-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 1rem; animation: fadeIn 0.2s ease; }
+  .q-card.is-changed { border-color: var(--amber); }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  .changed-tag { display: inline-block; background: var(--amber-light); color: var(--amber); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 2px 8px; border-radius: 20px; margin-left: 6px; vertical-align: middle; }
 
-  /* Metadata row */
-  .meta-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border);
-  }
-
+  /* Meta grid */
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
   .field-group { display: flex; flex-direction: column; gap: 4px; }
+  .field-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-muted); }
+  .field-input, .field-select { padding: 0.45rem 0.65rem; border: 1.5px solid var(--border); border-radius: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 0.88rem; color: var(--ink); background: var(--paper); outline: none; transition: border-color 0.15s, background 0.15s; }
+  .field-input:focus, .field-select:focus { border-color: var(--green-accent); background: #fff; }
+  .id-input { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
 
-  .field-label {
-    font-size: 0.72rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: var(--ink-muted);
-  }
-
-  .field-input, .field-select {
-    padding: 0.45rem 0.65rem;
-    border: 1.5px solid var(--border);
-    border-radius: 8px;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.88rem;
-    color: var(--ink);
-    background: var(--paper);
-    outline: none;
-    transition: border-color 0.15s, background 0.15s;
-  }
-
-  .field-input:focus, .field-select:focus {
-    border-color: var(--green-accent);
-    background: #fff;
-  }
-
-  .id-input {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-  }
-
-  /* Question text */
-  .q-label {
-    font-size: 0.72rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: var(--ink-muted);
-    margin-bottom: 6px;
-    display: block;
-  }
-
-  .q-textarea {
-    width: 100%;
-    padding: 0.75rem 0.9rem;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    color: var(--ink);
-    background: var(--paper);
-    outline: none;
-    resize: vertical;
-    min-height: 80px;
-    line-height: 1.45;
-    transition: border-color 0.15s, background 0.15s;
-    margin-bottom: 1.25rem;
-  }
-
+  /* Question */
+  .q-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-muted); margin-bottom: 6px; display: block; }
+  .q-textarea { width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--ink); background: var(--paper); outline: none; resize: vertical; min-height: 80px; line-height: 1.45; transition: border-color 0.15s, background 0.15s; margin-bottom: 1.25rem; }
   .q-textarea:focus { border-color: var(--green-accent); background: #fff; }
 
   /* Options */
-  .options-label {
-    font-size: 0.72rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: var(--ink-muted);
-    margin-bottom: 8px;
-    display: block;
-  }
-
+  .options-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-muted); margin-bottom: 8px; display: block; }
   .options-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1.25rem; }
-
-  .opt-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 0.5rem 0.75rem;
-    border-radius: 9px;
-    border: 1.5px solid var(--border);
-    background: var(--paper);
-    transition: border-color 0.15s;
-  }
-
+  .opt-row { display: flex; align-items: center; gap: 10px; padding: 0.5rem 0.75rem; border-radius: 9px; border: 1.5px solid var(--border); background: var(--paper); transition: border-color 0.15s; }
   .opt-row.correct-ans { border-color: var(--green-mid); background: var(--green-light); }
-
   .opt-radio { accent-color: var(--green-mid); width: 16px; height: 16px; cursor: pointer; flex-shrink: 0; }
-
-  .opt-letter {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: var(--border);
-    color: var(--ink-muted);
-    font-size: 0.78rem;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
+  .opt-letter { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--border); color: var(--ink-muted); font-size: 0.78rem; font-weight: 700; flex-shrink: 0; }
   .opt-row.correct-ans .opt-letter { background: var(--green-mid); color: #fff; }
-
-  .opt-input {
-    flex: 1;
-    padding: 0.4rem 0.6rem;
-    border: 1.5px solid transparent;
-    border-radius: 7px;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.93rem;
-    color: var(--ink);
-    background: transparent;
-    outline: none;
-    transition: border-color 0.15s, background 0.15s;
-  }
-
+  .opt-input { flex: 1; padding: 0.4rem 0.6rem; border: 1.5px solid transparent; border-radius: 7px; font-family: 'Source Sans 3', sans-serif; font-size: 0.93rem; color: var(--ink); background: transparent; outline: none; transition: border-color 0.15s, background 0.15s; }
   .opt-input:focus { border-color: var(--green-accent); background: #fff; }
-
   .correct-label { font-size: 0.78rem; color: var(--green-mid); font-weight: 600; white-space: nowrap; }
 
   /* Explanation */
-  .explanation-wrap {
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .explanation-textarea {
-    width: 100%;
-    padding: 0.7rem 0.9rem;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.9rem;
-    color: var(--green-dark);
-    background: var(--green-light);
-    outline: none;
-    resize: vertical;
-    min-height: 70px;
-    line-height: 1.55;
-    transition: border-color 0.15s;
-    margin-top: 6px;
-  }
-
+  .explanation-wrap { padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .explanation-textarea { width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem; color: var(--green-dark); background: var(--green-light); outline: none; resize: vertical; min-height: 70px; line-height: 1.55; transition: border-color 0.15s; margin-top: 6px; }
   .explanation-textarea:focus { border-color: var(--green-mid); }
 
-  /* Unsaved indicator */
-  .unsaved-dot {
-    display: none;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--amber);
-    flex-shrink: 0;
-  }
-  .unsaved-dot.visible { display: inline-block; }
-
-  /* Action bar */
-  .action-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 1.25rem;
-    padding: 0.85rem 1.1rem;
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-  }
-
-  .unsaved-msg {
-    font-size: 0.83rem;
-    color: var(--amber);
-    font-weight: 600;
-    display: none;
-    align-items: center;
-    gap: 6px;
-  }
+  /* Per-question action row */
+  .q-action-row { display: flex; align-items: center; gap: 8px; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .unsaved-msg { font-size: 0.83rem; color: var(--amber); font-weight: 600; display: none; align-items: center; gap: 5px; }
   .unsaved-msg.visible { display: flex; }
-
-  .saved-msg {
-    font-size: 0.83rem;
-    color: var(--green-mid);
-    font-weight: 600;
-    display: none;
-    align-items: center;
-    gap: 6px;
-  }
+  .saved-msg { font-size: 0.83rem; color: var(--green-mid); font-weight: 600; display: none; align-items: center; gap: 5px; }
   .saved-msg.visible { display: flex; }
 
-  .action-btns { display: flex; gap: 8px; margin-left: auto; }
-
-  .btn {
-    padding: 0.55rem 1.1rem;
-    border-radius: 9px;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 600;
-    cursor: pointer;
-    border: 1.5px solid var(--border);
-    background: var(--paper);
-    color: var(--ink-muted);
-    transition: all 0.15s;
-  }
+  /* Buttons */
+  .btn { padding: 0.55rem 1.1rem; border-radius: 9px; font-family: 'Source Sans 3', sans-serif; font-size: 0.88rem; font-weight: 600; cursor: pointer; border: 1.5px solid var(--border); background: var(--paper); color: var(--ink-muted); transition: all 0.15s; }
   .btn:hover { border-color: var(--green-accent); color: var(--green-dark); }
-
-  .btn-save {
-    background: var(--green-mid);
-    border-color: var(--green-mid);
-    color: #fff;
-  }
+  .btn-save { background: var(--green-mid); border-color: var(--green-mid); color: #fff; }
   .btn-save:hover { background: var(--green-dark); border-color: var(--green-dark); color: #fff; }
-
-  .btn-discard {
-    border-color: var(--red);
-    color: var(--red);
-    background: #fff;
-  }
+  .btn-discard { border-color: var(--red); color: var(--red); background: #fff; }
   .btn-discard:hover { background: var(--red-light); }
-
-  .btn-export {
-    border-color: var(--blue);
-    color: var(--blue);
-    background: var(--blue-light);
-  }
+  .btn-export { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
   .btn-export:hover { background: #d0e2f8; }
+  .btn-amber { border-color: var(--amber); color: var(--amber); background: var(--amber-light); }
+  .btn-amber:hover { background: #f5ddb0; }
 
   /* Nav */
-  .nav-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .nav-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 0.75rem 1.5rem;
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius);
-    background: #fff;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    color: var(--ink);
-    transition: all 0.15s;
-  }
+  .nav-row { display: flex; align-items: center; gap: 10px; }
+  .nav-btn { display: flex; align-items: center; gap: 6px; padding: 0.75rem 1.5rem; border: 1.5px solid var(--border); border-radius: var(--radius); background: #fff; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; color: var(--ink); transition: all 0.15s; }
   .nav-btn:hover:not(:disabled) { border-color: var(--green-mid); background: var(--green-light); color: var(--green-dark); }
   .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
   .nav-btn.primary { background: var(--green-mid); border-color: var(--green-mid); color: #fff; margin-left: auto; }
   .nav-btn.primary:hover:not(:disabled) { background: var(--green-dark); border-color: var(--green-dark); }
-
   .nav-counter { flex: 1; text-align: center; font-size: 0.88rem; color: var(--ink-muted); }
 
-  .jump-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 0.85rem;
-    justify-content: center;
-    font-size: 0.85rem;
-    color: var(--ink-muted);
-  }
-
-  .jump-input {
-    width: 58px;
-    padding: 0.3rem 0.5rem;
-    border: 1.5px solid var(--border);
-    border-radius: 8px;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.85rem;
-    text-align: center;
-    outline: none;
-    background: #fff;
-    color: var(--ink);
-  }
+  .jump-row { display: flex; align-items: center; gap: 8px; margin-top: 0.85rem; justify-content: center; font-size: 0.85rem; color: var(--ink-muted); }
+  .jump-input { width: 58px; padding: 0.3rem 0.5rem; border: 1.5px solid var(--border); border-radius: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 0.85rem; text-align: center; outline: none; background: #fff; color: var(--ink); }
   .jump-input:focus { border-color: var(--green-accent); }
-
-  .jump-btn {
-    padding: 0.3rem 0.8rem;
-    border: 1.5px solid var(--border);
-    border-radius: 8px;
-    background: var(--paper);
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.83rem;
-    font-weight: 600;
-    cursor: pointer;
-    color: var(--ink-muted);
-    transition: all 0.15s;
-  }
+  .jump-btn { padding: 0.3rem 0.8rem; border: 1.5px solid var(--border); border-radius: 8px; background: var(--paper); font-family: 'Source Sans 3', sans-serif; font-size: 0.83rem; font-weight: 600; cursor: pointer; color: var(--ink-muted); transition: all 0.15s; }
   .jump-btn:hover { border-color: var(--green-accent); color: var(--green-dark); }
-
   .keyboard-hint { text-align: center; font-size: 0.78rem; color: var(--ink-muted); margin-top: 0.6rem; opacity: 0.7; }
 
-  .empty-state {
-    text-align: center;
-    padding: 3rem 1rem;
-    color: var(--ink-muted);
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    margin-bottom: 1.25rem;
-  }
+  /* Empty */
+  .empty-state { text-align: center; padding: 3rem 1rem; color: var(--ink-muted); background: #fff; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; }
   .empty-state .icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
 
-  /* Export modal */
-  .modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: 100;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-  }
+  /* Modal */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 100; align-items: flex-start; justify-content: center; padding: 2rem 1rem; overflow-y: auto; }
   .modal-overlay.visible { display: flex; }
+  .modal { background: #fff; border-radius: var(--radius); padding: 1.75rem; width: 100%; max-width: 640px; box-shadow: 0 8px 40px rgba(0,0,0,0.18); margin: auto; }
+  .modal h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--green-dark); margin-bottom: 0.4rem; }
+  .modal .modal-sub { font-size: 0.88rem; color: var(--ink-muted); margin-bottom: 1.25rem; }
+  .modal textarea { width: 100%; height: 200px; padding: 0.75rem; border: 1.5px solid var(--border); border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--ink); background: var(--paper); resize: vertical; outline: none; margin-bottom: 1rem; }
+  .modal-actions { display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; }
 
-  .modal {
-    background: #fff;
-    border-radius: var(--radius);
-    padding: 1.75rem;
-    width: 100%;
-    max-width: 600px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
-  }
+  /* Changelog table */
+  .changelog { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 1rem; }
+  .changelog th { text-align: left; padding: 0.5rem 0.75rem; background: var(--paper); border-bottom: 2px solid var(--border); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); }
+  .changelog td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .changelog tr:last-child td { border-bottom: none; }
+  .changelog tr:hover td { background: var(--paper); }
+  .cl-time { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--ink-muted); white-space: nowrap; }
+  .cl-id { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; }
+  .cl-q { color: var(--ink); max-width: 280px; }
+  .cl-fields { color: var(--ink-muted); font-size: 0.78rem; }
 
-  .modal h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: var(--green-dark);
-    margin-bottom: 0.4rem;
-  }
-
-  .modal p { font-size: 0.88rem; color: var(--ink-muted); margin-bottom: 1rem; }
-
-  .modal textarea {
-    width: 100%;
-    height: 220px;
-    padding: 0.75rem;
-    border: 1.5px solid var(--border);
-    border-radius: 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--ink);
-    background: var(--paper);
-    resize: vertical;
-    outline: none;
-    margin-bottom: 1rem;
-  }
-
-  .modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
+  .no-changes-msg { text-align: center; padding: 2rem; color: var(--ink-muted); font-size: 0.9rem; }
 
   @media (max-width: 560px) {
     .meta-grid { grid-template-columns: 1fr 1fr; }
@@ -519,7 +162,7 @@
     .q-card { padding: 1.25rem; }
     .nav-btn { padding: 0.65rem 1rem; font-size: 0.88rem; }
     .keyboard-hint { display: none; }
-    .action-bar { flex-wrap: wrap; }
+    .session-actions { margin-left: 0; width: 100%; }
   }
 </style>
 </head>
@@ -529,15 +172,25 @@
   <header>
     <div class="badge">🐑 Editor Mode</div>
     <h1>Question Editor</h1>
-    <p class="sub">Review, edit, and save questions — then export your updated JSON</p>
     <p class="sub" style="margin-top:0.5rem;">
-      Total questions in bank: <strong id="total-count" style="color:var(--green-dark)">—</strong>
+      Total: <strong id="total-count" style="color:var(--green-dark)">—</strong>
       &nbsp;·&nbsp; 🌱 Easy: <strong id="count-easy" style="color:var(--green-dark)">—</strong>
       &nbsp;·&nbsp; 🐕 Medium: <strong id="count-medium" style="color:var(--amber)">—</strong>
       &nbsp;·&nbsp; 🏆 Hard: <strong id="count-hard" style="color:var(--red)">—</strong>
     </p>
   </header>
 
+  <!-- Session banner -->
+  <div class="session-banner" id="session-banner">
+    <span class="session-label">Session changes:</span>
+    <span class="session-count" id="session-count">0</span>
+    <div class="session-actions">
+      <button class="btn btn-amber" onclick="openChangelog()" id="view-changes-btn">View changes</button>
+      <button class="btn btn-export" onclick="openExport()" id="export-btn">⬇ Export JSON</button>
+    </div>
+  </div>
+
+  <!-- Filters -->
   <div class="controls">
     <div id="diff-filters" style="display:flex;gap:6px;flex-wrap:wrap;">
       <button class="filter-btn active" data-diff="All"    onclick="setDiff(this)">All</button>
@@ -550,6 +203,7 @@
     </div>
   </div>
 
+  <!-- Progress -->
   <div class="progress-row">
     <span class="progress-label" id="progress-label">1 of 20</span>
     <div class="progress-bar-wrap">
@@ -557,41 +211,42 @@
     </div>
   </div>
 
-  <!-- Action bar -->
-  <div class="action-bar">
-    <span class="unsaved-msg" id="unsaved-msg">⚠ Unsaved changes</span>
-    <span class="saved-msg"   id="saved-msg">✓ Changes saved</span>
-    <div class="action-btns">
-      <button class="btn btn-discard" id="discard-btn" onclick="discardChanges()" style="display:none">Discard</button>
-      <button class="btn btn-save"    id="save-btn"    onclick="saveChanges()"    style="display:none">Save changes</button>
-      <button class="btn btn-export"                   onclick="openExport()">⬇ Export JSON</button>
-    </div>
-  </div>
-
-  <!-- Question card (editable) -->
+  <!-- Question card -->
   <div id="q-card-wrap"></div>
 
+  <!-- Nav -->
   <div class="nav-row">
     <button class="nav-btn" id="prev-btn" onclick="go(-1)">← Previous</button>
     <span class="nav-counter" id="nav-counter"></span>
     <button class="nav-btn primary" id="next-btn" onclick="go(1)">Next →</button>
   </div>
-
   <div class="jump-row">
     Jump to question
     <input class="jump-input" type="number" id="jump-input" min="1" placeholder="1">
     <button class="jump-btn" onclick="jumpTo()">Go</button>
   </div>
-
   <p class="keyboard-hint">Tip: use ← → arrow keys to navigate (when not editing)</p>
 
+</div>
+
+<!-- Changelog modal -->
+<div class="modal-overlay" id="changelog-modal">
+  <div class="modal">
+    <h2>Session Changes</h2>
+    <p class="modal-sub">All edits saved this session. These will all be included when you export.</p>
+    <div id="changelog-content"></div>
+    <div class="modal-actions">
+      <button class="btn btn-export" onclick="closeChangelog(); openExport()">⬇ Export JSON now</button>
+      <button class="btn" onclick="closeChangelog()">Close</button>
+    </div>
+  </div>
 </div>
 
 <!-- Export modal -->
 <div class="modal-overlay" id="export-modal">
   <div class="modal">
     <h2>Export questions.json</h2>
-    <p>Copy this JSON and save it as <strong>questions.json</strong> in your GitHub repo to apply all your edits.</p>
+    <p class="modal-sub" id="export-sub"></p>
     <textarea id="export-textarea" readonly></textarea>
     <div class="modal-actions">
       <button class="btn" onclick="copyJson()">📋 Copy to clipboard</button>
@@ -604,7 +259,7 @@
 <script>
 const QUESTIONS_URL = 'questions.json';
 const LETTERS = ['A','B','C','D'];
-const CATEGORIES = ['Trial Basics','Judging & Scoring','Dog Work & Handling','Rules & Regulations','Sheep Behaviour'];
+const CATEGORIES = ['Trial Basics','Judging & Scoring','Dog Work & Handling','Rules & Regulations','Sheep Behaviour','History','Spectator Knowledge'];
 const DIFFICULTIES = ['Easy','Medium','Hard'];
 
 let allQuestions = [];
@@ -612,6 +267,9 @@ let filtered = [];
 let currentIndex = 0;
 let activeDiff = 'All';
 let isDirty = false;
+
+// Session changelog: map of question id -> {before, after, savedAt, fields}
+let sessionChanges = new Map();
 
 const FALLBACK = [{"id":"NST-001","category":"Trial Basics","difficulty":"Easy","question":"How many sheep are used in an Australian three sheep dog trial?","options":["2","3","5","6"],"correctAnswer":1,"explanation":"Australian three sheep trials use three sheep."}];
 
@@ -631,6 +289,13 @@ function updateCounts() {
   document.getElementById('count-easy').textContent   = allQuestions.filter(q => q.difficulty === 'Easy').length;
   document.getElementById('count-medium').textContent = allQuestions.filter(q => q.difficulty === 'Medium').length;
   document.getElementById('count-hard').textContent   = allQuestions.filter(q => q.difficulty === 'Hard').length;
+}
+
+function updateSessionBanner() {
+  const n = sessionChanges.size;
+  document.getElementById('session-count').textContent = n;
+  const banner = document.getElementById('session-banner');
+  banner.classList.toggle('has-changes', n > 0);
 }
 
 function setDiff(btn) {
@@ -658,7 +323,6 @@ function applyFilter() {
 
 function render() {
   const wrap = document.getElementById('q-card-wrap');
-
   if (filtered.length === 0) {
     wrap.innerHTML = `<div class="empty-state"><div class="icon">🐑</div><p>No questions match your filter.</p></div>`;
     document.getElementById('progress-label').textContent = '0 questions';
@@ -672,6 +336,7 @@ function render() {
   const q = filtered[currentIndex];
   const total = filtered.length;
   const pos = currentIndex + 1;
+  const isChanged = sessionChanges.has(q.id);
 
   document.getElementById('progress-label').textContent = `${pos} of ${total}`;
   document.getElementById('progress-bar').style.width = `${(pos / total) * 100}%`;
@@ -681,45 +346,34 @@ function render() {
   document.getElementById('nav-counter').textContent = `${pos} / ${total}`;
   document.getElementById('jump-input').max = total;
 
-  // Category options
   const catOptions = CATEGORIES.map(c =>
     `<option value="${c}" ${c === q.category ? 'selected' : ''}>${c}</option>`
-  ).join('');
+  ).join('') + `<option value="__custom__">+ Custom…</option>`;
 
-  // Difficulty options
   const diffOptions = DIFFICULTIES.map(d =>
     `<option value="${d}" ${d === q.difficulty ? 'selected' : ''}>${d}</option>`
   ).join('');
 
   wrap.innerHTML = `
-    <div class="q-card">
-
-      <!-- Metadata -->
+    <div class="q-card ${isChanged ? 'is-changed' : ''}">
       <div class="meta-grid">
         <div class="field-group">
-          <label class="field-label">Question ID</label>
+          <label class="field-label">Question ID ${isChanged ? '<span class="changed-tag">edited</span>' : ''}</label>
           <input class="field-input id-input" id="edit-id" value="${q.id}" oninput="markDirty()">
         </div>
         <div class="field-group">
           <label class="field-label">Category</label>
-          <select class="field-select" id="edit-category" onchange="markDirty()">
-            ${catOptions}
-            <option value="__custom__">+ Custom…</option>
-          </select>
+          <select class="field-select" id="edit-category" onchange="markDirty()">${catOptions}</select>
         </div>
         <div class="field-group">
           <label class="field-label">Difficulty</label>
-          <select class="field-select" id="edit-difficulty" onchange="markDirty()">
-            ${diffOptions}
-          </select>
+          <select class="field-select" id="edit-difficulty" onchange="markDirty()">${diffOptions}</select>
         </div>
       </div>
 
-      <!-- Question text -->
       <label class="q-label">Question</label>
       <textarea class="q-textarea" id="edit-question" oninput="markDirty()">${q.question}</textarea>
 
-      <!-- Options -->
       <span class="options-label">Answer Options — select the correct answer</span>
       <div class="options-list" id="options-list">
         ${q.options.map((opt, i) => `
@@ -730,33 +384,35 @@ function render() {
             <span class="opt-letter">${LETTERS[i]}</span>
             <input class="opt-input" id="edit-opt-${i}" value="${opt.replace(/"/g,'&quot;')}" oninput="markDirty()" placeholder="Option ${LETTERS[i]}">
             ${i === q.correctAnswer ? '<span class="correct-label">✓ Correct</span>' : ''}
-          </div>
-        `).join('')}
+          </div>`).join('')}
       </div>
 
-      <!-- Explanation -->
       <div class="explanation-wrap">
         <label class="q-label">Explanation</label>
         <textarea class="explanation-textarea" id="edit-explanation" oninput="markDirty()">${q.explanation || ''}</textarea>
       </div>
 
+      <div class="q-action-row">
+        <span class="unsaved-msg" id="unsaved-msg">⚠ Unsaved changes</span>
+        <span class="saved-msg"   id="saved-msg"></span>
+        <div style="margin-left:auto;display:flex;gap:8px;">
+          <button class="btn btn-discard" id="discard-btn" onclick="discardChanges()" style="display:none">Discard</button>
+          <button class="btn btn-save"    id="save-btn"    onclick="saveChanges()"    style="display:none">Save changes</button>
+        </div>
+      </div>
     </div>`;
 
-  // Handle custom category
+  // Custom category handler
   document.getElementById('edit-category').addEventListener('change', function() {
     if (this.value === '__custom__') {
       const val = prompt('Enter new category name:');
       if (val && val.trim()) {
         const opt = document.createElement('option');
-        opt.value = val.trim();
-        opt.textContent = val.trim();
-        opt.selected = true;
+        opt.value = val.trim(); opt.textContent = val.trim(); opt.selected = true;
         this.insertBefore(opt, this.lastElementChild);
         this.value = val.trim();
         if (!CATEGORIES.includes(val.trim())) CATEGORIES.push(val.trim());
-      } else {
-        this.value = q.category;
-      }
+      } else { this.value = q.category; }
     }
   });
 
@@ -768,20 +424,14 @@ function markCorrect(idx) {
     const row = document.getElementById(`opt-row-${i}`);
     if (!row) continue;
     const label = row.querySelector('.correct-label');
+    const letter = row.querySelector('.opt-letter');
     if (i === idx) {
       row.classList.add('correct-ans');
-      row.querySelector('.opt-letter').style.background = 'var(--green-mid)';
-      row.querySelector('.opt-letter').style.color = '#fff';
-      if (!label) {
-        const span = document.createElement('span');
-        span.className = 'correct-label';
-        span.textContent = '✓ Correct';
-        row.appendChild(span);
-      }
+      letter.style.background = 'var(--green-mid)'; letter.style.color = '#fff';
+      if (!label) { const s = document.createElement('span'); s.className='correct-label'; s.textContent='✓ Correct'; row.appendChild(s); }
     } else {
       row.classList.remove('correct-ans');
-      row.querySelector('.opt-letter').style.background = '';
-      row.querySelector('.opt-letter').style.color = '';
+      letter.style.background = ''; letter.style.color = '';
       if (label) label.remove();
     }
   }
@@ -791,11 +441,27 @@ function markDirty() { setDirty(true); }
 
 function setDirty(val) {
   isDirty = val;
-  document.getElementById('unsaved-msg').classList.toggle('visible', val);
-  document.getElementById('saved-msg').classList.toggle('visible', !val && currentIndex >= 0);
-  document.getElementById('save-btn').style.display    = val ? '' : 'none';
-  document.getElementById('discard-btn').style.display = val ? '' : 'none';
-  if (!val) setTimeout(() => document.getElementById('saved-msg').classList.remove('visible'), 2500);
+  const um = document.getElementById('unsaved-msg');
+  const sm = document.getElementById('saved-msg');
+  const sb = document.getElementById('save-btn');
+  const db = document.getElementById('discard-btn');
+  if (!um || !sm) return;
+  um.classList.toggle('visible', val);
+  if (val) { sm.classList.remove('visible'); }
+  if (sb) sb.style.display = val ? '' : 'none';
+  if (db) db.style.display = val ? '' : 'none';
+}
+
+function getChangedFields(before, after) {
+  const fields = [];
+  if (before.id !== after.id) fields.push('ID');
+  if (before.category !== after.category) fields.push('Category');
+  if (before.difficulty !== after.difficulty) fields.push('Difficulty');
+  if (before.question !== after.question) fields.push('Question');
+  if (before.correctAnswer !== after.correctAnswer) fields.push('Correct answer');
+  if (before.explanation !== after.explanation) fields.push('Explanation');
+  before.options.forEach((o, i) => { if (o !== after.options[i]) fields.push(`Option ${LETTERS[i]}`); });
+  return fields;
 }
 
 function saveChanges() {
@@ -803,31 +469,53 @@ function saveChanges() {
   const globalIdx = allQuestions.findIndex(x => x.id === q.id);
   if (globalIdx === -1) return;
 
-  // Read correct answer from radio
+  const before = JSON.parse(JSON.stringify(allQuestions[globalIdx]));
+
   const radios = document.querySelectorAll('input[name="correct"]');
   let correctAnswer = q.correctAnswer;
   radios.forEach(r => { if (r.checked) correctAnswer = parseInt(r.value); });
 
   const updated = {
-    id:            document.getElementById('edit-id').value.trim(),
-    category:      document.getElementById('edit-category').value,
-    difficulty:    document.getElementById('edit-difficulty').value,
-    question:      document.getElementById('edit-question').value.trim(),
-    options: [0,1,2,3].map(i => document.getElementById(`edit-opt-${i}`).value.trim()),
+    id:          document.getElementById('edit-id').value.trim(),
+    category:    document.getElementById('edit-category').value,
+    difficulty:  document.getElementById('edit-difficulty').value,
+    question:    document.getElementById('edit-question').value.trim(),
+    options:     [0,1,2,3].map(i => document.getElementById(`edit-opt-${i}`).value.trim()),
     correctAnswer,
-    explanation:   document.getElementById('edit-explanation').value.trim(),
+    explanation: document.getElementById('edit-explanation').value.trim(),
   };
+
+  const changedFields = getChangedFields(before, updated);
+  if (changedFields.length > 0) {
+    // Keep original before if first edit of this question
+    const existing = sessionChanges.get(before.id);
+    sessionChanges.set(updated.id, {
+      before: existing ? existing.before : before,
+      after: updated,
+      savedAt: new Date().toLocaleTimeString(),
+      fields: changedFields,
+    });
+  }
 
   allQuestions[globalIdx] = updated;
   filtered[currentIndex]  = updated;
   updateCounts();
+  updateSessionBanner();
   setDirty(false);
+
+  // Show saved confirmation
+  const sm = document.getElementById('saved-msg');
+  if (sm) {
+    sm.textContent = `✓ Saved${changedFields.length ? ' (' + changedFields.join(', ') + ')' : ''}`;
+    sm.classList.add('visible');
+    setTimeout(() => sm.classList.remove('visible'), 3000);
+  }
+
+  // Re-render card header to show/remove "edited" tag
+  render();
 }
 
-function discardChanges() {
-  render();
-  setDirty(false);
-}
+function discardChanges() { render(); setDirty(false); }
 
 function confirmNav() {
   return confirm('You have unsaved changes. Discard them and continue?');
@@ -854,19 +542,49 @@ function jumpTo() {
   document.getElementById('jump-input').value = '';
 }
 
-// Export
+// Changelog modal
+function openChangelog() {
+  const content = document.getElementById('changelog-content');
+  if (sessionChanges.size === 0) {
+    content.innerHTML = `<div class="no-changes-msg">🐑 No changes saved this session yet.</div>`;
+  } else {
+    const rows = [...sessionChanges.values()].map(c => `
+      <tr>
+        <td class="cl-time">${c.savedAt}</td>
+        <td class="cl-id">${c.after.id}</td>
+        <td class="cl-q">${c.after.question.substring(0, 60)}${c.after.question.length > 60 ? '…' : ''}</td>
+        <td class="cl-fields">${c.fields.join(', ')}</td>
+      </tr>`).join('');
+    content.innerHTML = `
+      <table class="changelog">
+        <thead><tr><th>Time</th><th>ID</th><th>Question</th><th>Fields changed</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+  }
+  document.getElementById('changelog-modal').classList.add('visible');
+}
+
+function closeChangelog() {
+  document.getElementById('changelog-modal').classList.remove('visible');
+}
+
+// Export modal
 function openExport() {
   if (isDirty) {
     const save = confirm(
-      '⚠ You have unsaved changes on this question.
-
-' +
-      'Click OK to save this question first, then export.
-' +
-      'Click Cancel to export without saving these changes.'
+      '⚠ You have unsaved changes on this question.\n\n' +
+      'Click OK to save them first, then export.\n' +
+      'Click Cancel to export without these changes.'
     );
     if (save) saveChanges();
   }
+
+  const n = sessionChanges.size;
+  const sub = n === 0
+    ? 'No changes were made this session — exporting the original file.'
+    : `${n} question${n > 1 ? 's' : ''} edited this session. All changes are included below.`;
+
+  document.getElementById('export-sub').textContent = sub;
   document.getElementById('export-textarea').value = JSON.stringify(allQuestions, null, 2);
   document.getElementById('export-modal').classList.add('visible');
 }
@@ -889,22 +607,19 @@ function downloadJson() {
   const blob = new Blob([json], { type: 'application/json' });
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
-  a.href     = url;
-  a.download = 'questions.json';
-  a.click();
+  a.href = url; a.download = 'questions.json'; a.click();
   URL.revokeObjectURL(url);
 }
 
-// Keyboard nav (skip when editing)
+// Keyboard nav
 document.addEventListener('keydown', e => {
   if (['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)) return;
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown') go(1);
   if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   go(-1);
 });
 
-// Warn before leaving with unsaved changes
 window.addEventListener('beforeunload', e => {
-  if (isDirty) { e.preventDefault(); e.returnValue = ''; }
+  if (isDirty || sessionChanges.size > 0) { e.preventDefault(); e.returnValue = ''; }
 });
 
 init();
