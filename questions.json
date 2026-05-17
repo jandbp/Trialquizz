@@ -1328,5 +1328,425 @@
     ],
     "correctAnswer": 0,
     "explanation": "John Perry with Bredbo Ash placed second in the 2023 National Open Championship."
+  },
+  {
+    "id": "NST-126",
+    "category": "Rules & Regulations",
+    "difficulty": "Easy",
+    "question": "How long is allowed for each run in the National Sheep Dog Trial Championship?",
+    "options": [
+      "10 minutes",
+      "12 minutes",
+      "15 minutes",
+      "20 minutes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Each dog is allowed 15 minutes to complete the course."
+  },
+  {
+    "id": "NST-127",
+    "category": "Rules & Regulations",
+    "difficulty": "Easy",
+    "question": "How many sheep are allocated to each dog during a run?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Each dog works three sheep."
+  },
+  {
+    "id": "NST-128",
+    "category": "Rules & Regulations",
+    "difficulty": "Medium",
+    "question": "Which side of the casting peg must the competitor leave from after delivery?",
+    "options": [
+      "Left-hand side",
+      "Either side",
+      "Right-hand side",
+      "Directly behind"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Competitors must leave on the right-hand side of the casting peg."
+  },
+  {
+    "id": "NST-129",
+    "category": "Rules & Regulations",
+    "difficulty": "Hard",
+    "question": "What is the penalty if a dog crosses on the cast?",
+    "options": [
+      "5 point deduction",
+      "10 point deduction",
+      "Obstacle must be reworked",
+      "Disqualification"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Any dog crossing on the cast is disqualified."
+  },
+  {
+    "id": "NST-130",
+    "category": "Rules & Regulations",
+    "difficulty": "Medium",
+    "question": "What happens if a dog is recalled after travelling a reasonable distance to prevent a cross and is re-cast?",
+    "options": [
+      "No penalty",
+      "5 point deduction",
+      "10 point deduction",
+      "Disqualification"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A recalled and re-cast dog incurs a 10 point deduction."
+  },
+  {
+    "id": "NST-131",
+    "category": "Rules & Regulations",
+    "difficulty": "Easy",
+    "question": "What is the maximum length of a cane that a competitor may use?",
+    "options": [
+      "30 cm",
+      "46 cm",
+      "60 cm",
+      "1 metre"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A cane may not exceed 46 centimetres."
+  },
+  {
+    "id": "NST-132",
+    "category": "Rules & Regulations",
+    "difficulty": "Medium",
+    "question": "Can a competitor use a cane to block sheep during the trial?",
+    "options": [
+      "Yes",
+      "Only at the pen",
+      "Only at obstacles",
+      "No"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A cane must not be used to create noise or block sheep."
+  },
+  {
+    "id": "NST-133",
+    "category": "Rules & Regulations",
+    "difficulty": "Easy",
+    "question": "What happens if a dog makes contact with sheep before the bell is rung?",
+    "options": [
+      "Warning only",
+      "5 point deduction",
+      "10 point deduction",
+      "Disqualification"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Breaking before the bell and contacting sheep results in disqualification."
+  },
+  {
+    "id": "NST-134",
+    "category": "Rules & Regulations",
+    "difficulty": "Medium",
+    "question": "What must happen if sheep enter an obstacle from the wrong end?",
+    "options": [
+      "Continue normally",
+      "Restart the entire run",
+      "All sheep must be brought clear before retrying",
+      "Only one sheep must be cleared"
+    ],
+    "correctAnswer": 2,
+    "explanation": "All sheep must be brought clear of the wings before reworking the obstacle."
+  },
+  {
+    "id": "NST-135",
+    "category": "Rules & Regulations",
+    "difficulty": "Medium",
+    "question": "What happens if the worker leaves the obstacle circle before all sheep are clear?",
+    "options": [
+      "Minor deduction",
+      "Obstacle reworked",
+      "Disqualification",
+      "Warning"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Leaving the circle early results in disqualification."
+  },
+  {
+    "id": "NST-136",
+    "category": "Rules & Regulations",
+    "difficulty": "Hard",
+    "question": "What is the highest possible score if a dog fails to negotiate any obstacle?",
+    "options": [
+      "40",
+      "50",
+      "60",
+      "75"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A dog that does not negotiate any obstacle cannot score more than 50 points."
+  },
+  {
+    "id": "NST-137",
+    "category": "Rules & Regulations",
+    "difficulty": "Easy",
+    "question": "What is the maximum score available for the pen?",
+    "options": [
+      "7",
+      "8",
+      "10",
+      "15"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The pen is worth 10 points."
+  },
+  {
+    "id": "NST-138",
+    "category": "Rules & Regulations",
+    "difficulty": "Easy",
+    "question": "How many points are allocated to the bridge?",
+    "options": [
+      "5",
+      "7",
+      "8",
+      "10"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The bridge is worth 8 points."
+  },
+  {
+    "id": "NST-139",
+    "category": "Rules & Regulations",
+    "difficulty": "Easy",
+    "question": "How many points are allocated to the race?",
+    "options": [
+      "5",
+      "7",
+      "8",
+      "10"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The race is worth 7 points."
+  },
+  {
+    "id": "NST-140",
+    "category": "Rules & Regulations",
+    "difficulty": "Easy",
+    "question": "How many points are allocated to general work?",
+    "options": [
+      "50",
+      "60",
+      "75",
+      "80"
+    ],
+    "correctAnswer": 2,
+    "explanation": "General work is allocated 75 points."
+  },
+  {
+    "id": "NST-141",
+    "category": "Rules & Regulations",
+    "difficulty": "Medium",
+    "question": "Can a bitch in season compete in the trial?",
+    "options": [
+      "No",
+      "Only in finals",
+      "Yes",
+      "Only with permission"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The rules allow a bitch in season to work."
+  },
+  {
+    "id": "NST-142",
+    "category": "Rules & Regulations",
+    "difficulty": "Medium",
+    "question": "What happens if a competitor touches their dog during the run?",
+    "options": [
+      "5 point deduction",
+      "10 point deduction",
+      "Obstacle reworked",
+      "Disqualification"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Touching the dog during the trial results in disqualification."
+  },
+  {
+    "id": "NST-143",
+    "category": "Rules & Regulations",
+    "difficulty": "Hard",
+    "question": "What happens if the competitor's own dog enters the arena while they are working another dog?",
+    "options": [
+      "No penalty",
+      "Warning",
+      "5 point deduction",
+      "Disqualification"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The worker will be disqualified."
+  },
+  {
+    "id": "NST-144",
+    "category": "Rules & Regulations",
+    "difficulty": "Medium",
+    "question": "What must competitors do when moving between pegs?",
+    "options": [
+      "Walk directly inside the course markers",
+      "Run between markers",
+      "Stop and work the dog freely",
+      "Choose any path"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Competitors must move directly within the course markers."
+  },
+  {
+    "id": "NST-145",
+    "category": "Rules & Regulations",
+    "difficulty": "Hard",
+    "question": "What penalty applies if a worker retraces their steps after passing a peg?",
+    "options": [
+      "No penalty",
+      "1 point deduction",
+      "5 point deduction",
+      "Disqualification"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Retracing steps after passing a peg incurs a 1 point deduction."
+  },
+  {
+    "id": "NST-146",
+    "category": "Rules & Regulations",
+    "difficulty": "Medium",
+    "question": "What must happen if sheep clear an obstacle before the worker reaches the circle?",
+    "options": [
+      "Continue normally",
+      "The obstacle must be reworked",
+      "Immediate disqualification",
+      "Loss of all obstacle points"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The obstacle must be worked again correctly."
+  },
+  {
+    "id": "NST-147",
+    "category": "Rules & Regulations",
+    "difficulty": "Hard",
+    "question": "When does the trial officially terminate?",
+    "options": [
+      "When sheep enter the pen",
+      "When the whistle blows",
+      "When the gate is closed",
+      "When the judge signals"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The trial ends once the pen gate is closed."
+  },
+  {
+    "id": "NST-148",
+    "category": "Rules & Regulations",
+    "difficulty": "Medium",
+    "question": "Can a dog be penalised for jumping the arena fence to head sheep correctly?",
+    "options": [
+      "No",
+      "Yes",
+      "Only in finals",
+      "Only at the bridge"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A dog may be penalised for leaving the arena even if attempting correct work."
+  },
+  {
+    "id": "NST-149",
+    "category": "Rules & Regulations",
+    "difficulty": "Hard",
+    "question": "What happens if a dog leaves the arena out of control?",
+    "options": [
+      "Minor deduction",
+      "Obstacle rework",
+      "Possible disqualification",
+      "Automatic rerun"
+    ],
+    "correctAnswer": 2,
+    "explanation": "An uncontrolled departure from the arena may result in disqualification."
+  },
+  {
+    "id": "NST-150",
+    "category": "Rules & Regulations",
+    "difficulty": "Medium",
+    "question": "What is the protest fee for lodging a written protest?",
+    "options": [
+      "$20",
+      "$50",
+      "$75",
+      "$100"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A protest must be accompanied by a $50 fee."
+  },
+  {
+    "id": "NST-151",
+    "category": "Rules & Regulations",
+    "difficulty": "Easy",
+    "question": "Can late entries be accepted?",
+    "options": [
+      "Yes",
+      "Only with permission",
+      "Only for local competitors",
+      "No"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The rules state that no late entries will be accepted."
+  },
+  {
+    "id": "NST-152",
+    "category": "Rules & Regulations",
+    "difficulty": "Medium",
+    "question": "What qualification must all handlers meet?",
+    "options": [
+      "Be over 18",
+      "Own a registered dog",
+      "Be a financial member of their state association",
+      "Have trialled previously"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Handlers must be financial members of their state working sheepdog association."
+  },
+  {
+    "id": "NST-153",
+    "category": "Rules & Regulations",
+    "difficulty": "Medium",
+    "question": "Can a nominee work a dog in both the preliminary round and the final?",
+    "options": [
+      "No",
+      "Yes",
+      "Only in emergencies",
+      "Only in the preliminary round"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A nominated handler must work the dog in both rounds."
+  },
+  {
+    "id": "NST-154",
+    "category": "Rules & Regulations",
+    "difficulty": "Easy",
+    "question": "What type of electronic equipment is prohibited on dogs entering the ring?",
+    "options": [
+      "GPS trackers",
+      "Electronic dog collars",
+      "Microchips",
+      "Whistle receivers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Electric dog collars and replicas are prohibited."
+  },
+  {
+    "id": "NST-155",
+    "category": "Rules & Regulations",
+    "difficulty": "Hard",
+    "question": "If sheep pass on the left-hand side of a winding peg, what must happen?",
+    "options": [
+      "Nothing",
+      "The sheep must be unwound once anti-clockwise",
+      "The run is disqualified",
+      "The obstacle is skipped"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The sheep must be unwound anti-clockwise once only."
   }
 ]
