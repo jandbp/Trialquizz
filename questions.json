@@ -1671,10 +1671,10 @@
     "difficulty": "Medium",
     "question": "What is the protest fee for lodging a written protest?",
     "options": [
-      "$20",
-      "$50",
-      "$75",
-      "$100"
+      "$20 ",
+      "$50 ",
+      "$75 ",
+      "$100 "
     ],
     "correctAnswer": 1,
     "explanation": "A protest must be accompanied by a $50 fee."
@@ -1748,5 +1748,173 @@
     ],
     "correctAnswer": 1,
     "explanation": "The sheep must be unwound anti-clockwise once only."
+  },
+  {
+    "id": "NST-156",
+    "category": "Rules & Regulations",
+    "difficulty": "Hard",
+    "question": "How long can a handlers stick/ cane be in the National Sheep Dog Trial",
+    "options": [
+      "Less than 40cm",
+      "45cm",
+      "Not more than 46cm",
+      "Any length is ok"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A  handler may use a cane or stick Ònot exceeding 46 centimetres in length\""
+  },
+  {
+    "id": "NST-157",
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "Which legendary sheepdog won five National Championships between 1946 and 1952 and was described by George Westcott as 'easily the best sheep dog that has worked in a National Sheep Dog Trial Championship'?",
+    "options": [
+      "Curley",
+      "Johnny",
+      "Warragul",
+      "Scarlet O'Hara"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Johnny won five National Championships and was regarded by George Westcott as the best sheepdog to have worked in a National Championship."
+  },
+  {
+    "id": "NST-158",
+    "category": "History",
+    "difficulty": "Medium",
+    "question": "What year did Queen Elizabeth II attend the National Sheep Dog Trial Championships and present the Duke of Gloucester Sash?",
+    "options": [
+      "1965",
+      "1970",
+      "1975",
+      "1980"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Queen Elizabeth II attended the National Sheep Dog Trial Championships in Canberra in 1970 and presented the Duke of Gloucester Sash."
+  },
+  {
+    "id": "NST-159",
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "What special national celebration was linked to the 1970 National Sheep Dog Trial Championships?",
+    "options": [
+      "Federation Jubilee",
+      "Australian Bicentenary",
+      "Commonwealth Centenary",
+      "Centenary of Canberra"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The 1970 championships were conducted as part of the Commonwealth Centenary celebrations. "
+  },
+  {
+    "id": "NST-160",
+    "category": "History",
+    "difficulty": "Medium",
+    "question": "Which royal trophy was awarded in the National Open Sheep Dog Trial Championship in 1970?",
+    "options": [
+      "Queen's Trophy",
+      "Duke of Edinburgh Cup",
+      "Royal Agricultural Medal",
+      "Governor-General's Shield"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Queen's Trophy was one of the major awards listed for the National Open Championship. "
+  },
+  {
+    "id": "NST-161",
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "What airline sponsored the Champion of Champions trophy in 1970?",
+    "options": [
+      "Ansett",
+      "TAA",
+      "Qantas",
+      "Trans Australia Express"
+    ],
+    "correctAnswer": 1,
+    "explanation": "TAA advertised that it was proud to fly champions to and from Canberra and sponsor the Champion of Champions trophy. "
+  },
+  {
+    "id": "NST-162",
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "What was the name of the famous Australian champion sheepdog that won five National Championships and once scored a perfect 100 points?",
+    "options": [
+      "King's Relief",
+      "Johnny",
+      "Curley",
+      "Warragul"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Johnny was the legendary champion sheepdog that won five National Championships and achieved a perfect score of 100 points. "
+  },
+  {
+    "id": "NST-164",
+    "category": "History",
+    "difficulty": "Medium",
+    "question": "What special anniversary did the National Sheep Dog Trial Championships celebrate in 1988?",
+    "options": [
+      "Silver Jubilee",
+      "Golden Jubilee",
+      "Bicentennial",
+      "Diamond Jubilee"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The 1988 Championships were promoted as the Bicentennial National Sheep Dog Trials. "
+  },
+  {
+    "id": "NST-165",
+    "category": "History",
+    "difficulty": "Medium",
+    "question": "At which Canberra venue were the National Championships held throughout the late 1980s and 1990s?",
+    "options": [
+      "Exhibition Park",
+      "Hall Recreation Oval",
+      "Manuka Oval",
+      "Royal Canberra Showground"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Programs shown in the journal identify Hall Recreation Oval Canberra as the venue. "
+  },
+  {
+    "id": "NST-166",
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "Which sponsorship brand appeared prominently in the title of the 1994 National Championships?",
+    "options": [
+      "Bonnie",
+      "Lucky Dog",
+      "Pedigree Meaty-Bites",
+      "Skippa"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 1994 National Championships were sponsored as the Lucky Dog Working Dog Championships. "
+  },
+  {
+    "id": "NST-167",
+    "category": "History",
+    "difficulty": "Medium",
+    "question": "What major title was awarded alongside the Queen's Trophy and Duke of Gloucester Sash in the 1996 Championships?",
+    "options": [
+      "Prime Minister's Shield",
+      "Governor-General's Sash",
+      "National Rural Trophy",
+      "Australian Working Dog Medal"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 1996 program lists the Governor-General's Sash among the major awards. "
+  },
+  {
+    "id": "NST-168",
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "What year did the National Sheep Dog Trial Championships hold their Golden Jubilee event?",
+    "options": [
+      "1988",
+      "1990",
+      "1993",
+      "2000"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The 1993 Championships program was labelled as the Golden Jubilee National Championships."
   }
 ]
