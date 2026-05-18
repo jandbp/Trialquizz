@@ -280,7 +280,7 @@
     "explanation": "The drive is often considered the most technically difficult section."
   },
   {
-    "id": "NST-051",
+    "id": "NST-021",
     "category": "History",
     "difficulty": "Easy",
     "question": "In which Australian town were the world's first recorded sheep dog trials held in 1870?",
@@ -294,7 +294,7 @@
     "explanation": "The first recorded sheep dog trial was held at Forbes, NSW in 1870."
   },
   {
-    "id": "NST-052",
+    "id": "NST-022",
     "category": "History",
     "difficulty": "Medium",
     "question": "Who played a major role in establishing the early National Sheep Dog Trials in Canberra?",
@@ -308,7 +308,7 @@
     "explanation": "George Westcott is closely associated with the establishment of the National Trials in Canberra."
   },
   {
-    "id": "NST-053",
+    "id": "NST-023",
     "category": "History",
     "difficulty": "Easy",
     "question": "What breed is most commonly associated with Australian sheep dog trialling?",
@@ -322,7 +322,7 @@
     "explanation": "The Australian Kelpie is strongly associated with sheep dog trialling."
   },
   {
-    "id": "NST-054",
+    "id": "NST-024",
     "category": "History",
     "difficulty": "Medium",
     "question": "What is the name of the famous foundation sheepdog that helped give the Kelpie breed its name?",
@@ -336,7 +336,7 @@
     "explanation": "A dog named Kelpie became famous through early trial success."
   },
   {
-    "id": "NST-055",
+    "id": "NST-025",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
     "question": "What is the usual time limit for a National Sheep Dog Trial run?",
@@ -350,7 +350,7 @@
     "explanation": "The National Championship course is generally run with a 15 minute limit."
   },
   {
-    "id": "NST-056",
+    "id": "NST-026",
     "category": "Dog Work & Handling",
     "difficulty": "Medium",
     "question": "What is meant by a dog having good 'stock sense'?",
@@ -364,7 +364,7 @@
     "explanation": "Stock sense refers to a dog's natural feel and understanding of livestock."
   },
   {
-    "id": "NST-057",
+    "id": "NST-027",
     "category": "Judging & Scoring",
     "difficulty": "Medium",
     "question": "What are judges looking for in a straight fetch?",
@@ -378,7 +378,7 @@
     "explanation": "A straight fetch keeps sheep aligned with the intended course."
   },
   {
-    "id": "NST-058",
+    "id": "NST-028",
     "category": "Dog Work & Handling",
     "difficulty": "Hard",
     "question": "What is meant by the dog working 'on balance'?",
@@ -392,7 +392,7 @@
     "explanation": "A dog on balance positions itself to maintain effective control of sheep."
   },
   {
-    "id": "NST-059",
+    "id": "NST-029",
     "category": "Sheep Behaviour",
     "difficulty": "Medium",
     "question": "Why are settled sheep important in trialling?",
@@ -406,7 +406,7 @@
     "explanation": "Calm sheep are easier to handle accurately."
   },
   {
-    "id": "NST-060",
+    "id": "NST-030",
     "category": "Judging & Scoring",
     "difficulty": "Medium",
     "question": "What usually happens if sheep stop repeatedly during a drive?",
@@ -420,7 +420,7 @@
     "explanation": "Repeated stopping indicates reduced flow and control."
   },
   {
-    "id": "NST-061",
+    "id": "NST-031",
     "category": "History",
     "difficulty": "Hard",
     "question": "Which handler and dog won the 2023 National Open Championship?",
@@ -434,7 +434,7 @@
     "explanation": "Mick Hudson won the 2023 National Open Championship with MGH Rabbit."
   },
   {
-    "id": "NST-062",
+    "id": "NST-032",
     "category": "History",
     "difficulty": "Hard",
     "question": "Who won the 2026 National Sheep Dog Trial Open Championship?",
@@ -448,7 +448,7 @@
     "explanation": "Ken Atherton won the 2026 National Open Championship."
   },
   {
-    "id": "NST-063",
+    "id": "NST-033",
     "category": "History",
     "difficulty": "Hard",
     "question": "What was the name of Ken Atherton's winning dog in the 2026 National Open Championship?",
@@ -462,7 +462,7 @@
     "explanation": "Ramulam Prickles won the 2026 National Open Championship with Ken Atherton."
   },
   {
-    "id": "NST-064",
+    "id": "NST-034",
     "category": "History",
     "difficulty": "Medium",
     "question": "Where are the National Sheep Dog Trials traditionally held?",
@@ -476,7 +476,7 @@
     "explanation": "The Nationals have a long association with Canberra."
   },
   {
-    "id": "NST-065",
+    "id": "NST-035",
     "category": "History",
     "difficulty": "Medium",
     "question": "Which Canberra venue hosted the early National Sheep Dog Trials?",
@@ -490,7 +490,7 @@
     "explanation": "The early National Sheep Dog Trials were held at Manuka Oval."
   },
   {
-    "id": "NST-066",
+    "id": "NST-036",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "What can result in disqualification during a run?",
@@ -504,7 +504,7 @@
     "explanation": "Exceeding the time limit may result in disqualification."
   },
   {
-    "id": "NST-067",
+    "id": "NST-037",
     "category": "Judging & Scoring",
     "difficulty": "Medium",
     "question": "What is the likely result of rough handling by the dog?",
@@ -518,7 +518,7 @@
     "explanation": "Rough or stressful handling is penalised heavily."
   },
   {
-    "id": "NST-068",
+    "id": "NST-038",
     "category": "Dog Work & Handling",
     "difficulty": "Medium",
     "question": "What is a key purpose of whistles in trialling?",
@@ -532,7 +532,7 @@
     "explanation": "Handlers use whistles to communicate commands over long distances."
   },
   {
-    "id": "NST-069",
+    "id": "NST-039",
     "category": "Trial Basics",
     "difficulty": "Easy",
     "question": "During which phase are sheep brought toward the handler?",
@@ -546,7 +546,7 @@
     "explanation": "The fetch brings sheep from the field toward the handler."
   },
   {
-    "id": "NST-070",
+    "id": "NST-040",
     "category": "Sheep Behaviour",
     "difficulty": "Hard",
     "question": "What does applying too much pressure usually cause?",
@@ -560,7 +560,7 @@
     "explanation": "Excessive pressure can disturb sheep and reduce control."
   },
   {
-    "id": "NST-071",
+    "id": "NST-041",
     "category": "History",
     "difficulty": "Hard",
     "question": "Who won the 2025 National Open Championship with MGH Gem?",
@@ -574,7 +574,7 @@
     "explanation": "Scott Smith won the 2025 National Open Championship with MGH Gem."
   },
   {
-    "id": "NST-072",
+    "id": "NST-042",
     "category": "History",
     "difficulty": "Medium",
     "question": "What is the Champion of Champions competition?",
@@ -588,7 +588,7 @@
     "explanation": "The Champion of Champions brings together state and other qualifying champions."
   },
   {
-    "id": "NST-073",
+    "id": "NST-043",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "How many dogs commonly contest the National Open Final?",
@@ -602,7 +602,7 @@
     "explanation": "The National Open Final commonly consists of six finalists."
   },
   {
-    "id": "NST-074",
+    "id": "NST-044",
     "category": "Judging & Scoring",
     "difficulty": "Hard",
     "question": "Why are judges concerned with the 'line' of the sheep?",
@@ -616,7 +616,7 @@
     "explanation": "Maintaining line reflects efficient and controlled handling."
   },
   {
-    "id": "NST-075",
+    "id": "NST-045",
     "category": "Dog Work & Handling",
     "difficulty": "Hard",
     "question": "What does a dog that is 'sticky' on sheep tend to do?",
@@ -630,7 +630,7 @@
     "explanation": "Sticky dogs crowd sheep and can upset them."
   },
   {
-    "id": "NST-076",
+    "id": "NST-046",
     "category": "History",
     "difficulty": "Easy",
     "question": "Since what year have the National Sheep Dog Trial Championships been held in Canberra?",
@@ -644,7 +644,7 @@
     "explanation": "The National Sheep Dog Trial Championships have been held in Canberra since 1943."
   },
   {
-    "id": "NST-077",
+    "id": "NST-047",
     "category": "History",
     "difficulty": "Medium",
     "question": "Why did the National Trials begin at Manuka Oval in 1943?",
@@ -658,7 +658,7 @@
     "explanation": "The early National Trials began as a single-day event to raise funds for Legacy during World War II."
   },
   {
-    "id": "NST-078",
+    "id": "NST-048",
     "category": "History",
     "difficulty": "Medium",
     "question": "What is the Duke of Gloucester Sash associated with?",
@@ -672,7 +672,7 @@
     "explanation": "The Duke of Gloucester Sash was presented to the National Sheep Dog Trial Association in 1945."
   },
   {
-    "id": "NST-079",
+    "id": "NST-049",
     "category": "History",
     "difficulty": "Hard",
     "question": "Who presented the Duke of Gloucester Sash to the National Sheep Dog Trial Association?",
@@ -686,7 +686,7 @@
     "explanation": "Prince Henry, Duke of Gloucester, presented the sash during his tenure as Governor-General of Australia."
   },
   {
-    "id": "NST-080",
+    "id": "NST-050",
     "category": "History",
     "difficulty": "Easy",
     "question": "Which city is strongly associated with the National Sheep Dog Trial Championships?",
@@ -700,7 +700,7 @@
     "explanation": "The National Sheep Dog Trial Championships have a long association with Canberra."
   },
   {
-    "id": "NST-081",
+    "id": "NST-051",
     "category": "History",
     "difficulty": "Medium",
     "question": "What broad heritage connection do the National Trials represent?",
@@ -714,7 +714,7 @@
     "explanation": "The Nationals are described as an enduring link between the Bush Capital and rural Australia."
   },
   {
-    "id": "NST-082",
+    "id": "NST-052",
     "category": "History",
     "difficulty": "Hard",
     "question": "Which handler and dog placed second in the 2026 National Open Championship?",
@@ -728,7 +728,7 @@
     "explanation": "Scott Smith with MGH Gem placed second in the 2026 National Open Championship."
   },
   {
-    "id": "NST-083",
+    "id": "NST-053",
     "category": "History",
     "difficulty": "Hard",
     "question": "Which handler and dog placed third in the 2026 National Open Championship?",
@@ -742,7 +742,7 @@
     "explanation": "Bill Davidson with Grassvalley Flake placed third in the 2026 National Open Championship."
   },
   {
-    "id": "NST-084",
+    "id": "NST-054",
     "category": "History",
     "difficulty": "Hard",
     "question": "Who won the 2026 Champion of Champions competition?",
@@ -756,7 +756,7 @@
     "explanation": "Simon Leaning with Marionvale Di won the 2026 Champion of Champions competition."
   },
   {
-    "id": "NST-085",
+    "id": "NST-055",
     "category": "History",
     "difficulty": "Hard",
     "question": "Who won the 2025 National Open Championship?",
@@ -770,7 +770,7 @@
     "explanation": "Scott Smith with MGH Gem won the 2025 National Open Championship."
   },
   {
-    "id": "NST-086",
+    "id": "NST-056",
     "category": "History",
     "difficulty": "Hard",
     "question": "Which handler and dog placed second in the 2025 National Open Championship?",
@@ -784,7 +784,7 @@
     "explanation": "Mick Hudson with MGH Rabbit placed second in the 2025 National Open Championship."
   },
   {
-    "id": "NST-087",
+    "id": "NST-057",
     "category": "History",
     "difficulty": "Hard",
     "question": "Who won the 2025 Champion of Champions competition?",
@@ -798,7 +798,7 @@
     "explanation": "Barry Paton with Marong Murphy won the 2025 Champion of Champions competition."
   },
   {
-    "id": "NST-088",
+    "id": "NST-058",
     "category": "History",
     "difficulty": "Hard",
     "question": "Who won the 2024 National Open Championship?",
@@ -812,7 +812,7 @@
     "explanation": "Scott Smith with Wynella Pink won the 2024 National Open Championship."
   },
   {
-    "id": "NST-089",
+    "id": "NST-059",
     "category": "History",
     "difficulty": "Hard",
     "question": "Which dog did Scott Smith work to win the 2024 National Open Championship?",
@@ -826,7 +826,7 @@
     "explanation": "Scott Smith won the 2024 National Open Championship with Wynella Pink."
   },
   {
-    "id": "NST-090",
+    "id": "NST-060",
     "category": "History",
     "difficulty": "Hard",
     "question": "Who won the 2023 National Open Championship?",
@@ -840,7 +840,7 @@
     "explanation": "Mick Hudson with MGH Rabbit won the 2023 National Open Championship."
   },
   {
-    "id": "NST-091",
+    "id": "NST-061",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
     "question": "How many species are directly involved in completing a three sheep dog trial course?",
@@ -854,7 +854,7 @@
     "explanation": "The trial involves sheep, dog and person working together."
   },
   {
-    "id": "NST-092",
+    "id": "NST-062",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
     "question": "How many obstacles are described as part of the National course summary?",
@@ -868,7 +868,7 @@
     "explanation": "The National course is described as involving three obstacles."
   },
   {
-    "id": "NST-093",
+    "id": "NST-063",
     "category": "Spectator Knowledge",
     "difficulty": "Easy",
     "question": "What should spectators mainly watch when trying to understand the score?",
@@ -882,7 +882,7 @@
     "explanation": "Scoring is driven by calm, controlled and accurate movement of the sheep."
   },
   {
-    "id": "NST-094",
+    "id": "NST-064",
     "category": "Spectator Knowledge",
     "difficulty": "Medium",
     "question": "Why might a run that looks fast still lose many points?",
@@ -896,7 +896,7 @@
     "explanation": "Accuracy, control and stockmanship are more important than speed alone."
   },
   {
-    "id": "NST-095",
+    "id": "NST-065",
     "category": "Judging & Scoring",
     "difficulty": "Medium",
     "question": "If sheep are slightly off line for a short distance, what is the likely scoring effect?",
@@ -910,7 +910,7 @@
     "explanation": "A slight, brief deviation from line normally results in a small deduction."
   },
   {
-    "id": "NST-096",
+    "id": "NST-066",
     "category": "Judging & Scoring",
     "difficulty": "Medium",
     "question": "If sheep remain badly off line over a long distance, how should spectators understand the deductions?",
@@ -924,7 +924,7 @@
     "explanation": "Deductions can accumulate while the sheep remain off line or poorly controlled."
   },
   {
-    "id": "NST-097",
+    "id": "NST-067",
     "category": "Judging & Scoring",
     "difficulty": "Hard",
     "question": "Which statement best describes judging an off-line drive?",
@@ -938,7 +938,7 @@
     "explanation": "Judges assess the quality of work, including how far and how long the sheep are off line."
   },
   {
-    "id": "NST-098",
+    "id": "NST-068",
     "category": "Dog Work & Handling",
     "difficulty": "Medium",
     "question": "What is a common sign that the dog is putting too much pressure on the sheep?",
@@ -952,7 +952,7 @@
     "explanation": "Excessive pressure often causes sheep to rush, split or become difficult to control."
   },
   {
-    "id": "NST-099",
+    "id": "NST-069",
     "category": "Dog Work & Handling",
     "difficulty": "Medium",
     "question": "What does a handler usually try to achieve with quiet, timely commands?",
@@ -966,7 +966,7 @@
     "explanation": "Quiet and timely commands help maintain control while keeping sheep settled."
   },
   {
-    "id": "NST-100",
+    "id": "NST-070",
     "category": "Trial Basics",
     "difficulty": "Easy",
     "question": "What is the final close-control task in many three sheep trials?",
@@ -980,7 +980,7 @@
     "explanation": "The pen is the final close-control task."
   },
   {
-    "id": "NST-101",
+    "id": "NST-071",
     "category": "Trial Basics",
     "difficulty": "Medium",
     "question": "What is the main purpose of the cast or outrun?",
@@ -994,7 +994,7 @@
     "explanation": "The cast or outrun sends the dog out around the sheep so it can gather them calmly."
   },
   {
-    "id": "NST-102",
+    "id": "NST-072",
     "category": "Trial Basics",
     "difficulty": "Medium",
     "question": "What is the main purpose of the lift?",
@@ -1008,7 +1008,7 @@
     "explanation": "The lift is the first movement of the sheep after the dog has completed the outrun."
   },
   {
-    "id": "NST-103",
+    "id": "NST-073",
     "category": "Trial Basics",
     "difficulty": "Medium",
     "question": "What is the main difference between the fetch and the drive?",
@@ -1022,7 +1022,7 @@
     "explanation": "The fetch brings sheep toward the handler, while the drive requires the dog to move sheep away or around the course."
   },
   {
-    "id": "NST-104",
+    "id": "NST-074",
     "category": "Sheep Behaviour",
     "difficulty": "Medium",
     "question": "Why can one unsettled sheep affect the whole run?",
@@ -1036,7 +1036,7 @@
     "explanation": "Sheep are flock animals, so the movement of one can influence the group."
   },
   {
-    "id": "NST-105",
+    "id": "NST-075",
     "category": "Sheep Behaviour",
     "difficulty": "Hard",
     "question": "What is the likely result if the dog comes too close behind the sheep?",
@@ -1050,7 +1050,7 @@
     "explanation": "A dog that works too close can over-pressure sheep and cause poor line or loss of control."
   },
   {
-    "id": "NST-106",
+    "id": "NST-076",
     "category": "Judging & Scoring",
     "difficulty": "Medium",
     "question": "What kind of work is usually rewarded most highly?",
@@ -1064,7 +1064,7 @@
     "explanation": "Judges reward calm, accurate and efficient work with good stockmanship."
   },
   {
-    "id": "NST-107",
+    "id": "NST-077",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
     "question": "What happens to the starting score as faults occur?",
@@ -1078,7 +1078,7 @@
     "explanation": "Trials are generally scored by deducting points from the starting score."
   },
   {
-    "id": "NST-108",
+    "id": "NST-078",
     "category": "Judging & Scoring",
     "difficulty": "Hard",
     "question": "Why is crossing usually treated as a serious fault?",
@@ -1092,7 +1092,7 @@
     "explanation": "Crossing can indicate a loss of correct position and may disturb the sheep's line."
   },
   {
-    "id": "NST-109",
+    "id": "NST-079",
     "category": "Judging & Scoring",
     "difficulty": "Medium",
     "question": "Which of these would most likely attract a major deduction?",
@@ -1106,7 +1106,7 @@
     "explanation": "Missing an obstacle completely normally results in a major loss of points for that section."
   },
   {
-    "id": "NST-110",
+    "id": "NST-080",
     "category": "Spectator Knowledge",
     "difficulty": "Easy",
     "question": "Which run would likely score better?",
@@ -1120,7 +1120,7 @@
     "explanation": "A calm, accurate run is usually preferred to speed without control."
   },
   {
-    "id": "NST-111",
+    "id": "NST-081",
     "category": "Dog Work & Handling",
     "difficulty": "Medium",
     "question": "What does it mean if a dog is said to be 'working wide'?",
@@ -1134,7 +1134,7 @@
     "explanation": "Working wide means the dog is keeping a greater distance from the sheep."
   },
   {
-    "id": "NST-112",
+    "id": "NST-082",
     "category": "Dog Work & Handling",
     "difficulty": "Medium",
     "question": "When might working wide be helpful?",
@@ -1148,7 +1148,7 @@
     "explanation": "Working wide can help avoid over-pressuring the sheep."
   },
   {
-    "id": "NST-113",
+    "id": "NST-083",
     "category": "Dog Work & Handling",
     "difficulty": "Hard",
     "question": "When might working too wide become a problem?",
@@ -1162,7 +1162,7 @@
     "explanation": "If the dog is too wide, it may not have enough influence to hold the sheep on line."
   },
   {
-    "id": "NST-114",
+    "id": "NST-084",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "What is the role of the handler during a trial?",
@@ -1176,7 +1176,7 @@
     "explanation": "The handler directs the dog, but the sheep should be moved by the dog through good stock work."
   },
   {
-    "id": "NST-115",
+    "id": "NST-085",
     "category": "Spectator Knowledge",
     "difficulty": "Medium",
     "question": "Why do top runs sometimes appear uneventful to new spectators?",
@@ -1190,7 +1190,7 @@
     "explanation": "High-quality dog work can look effortless because the sheep stay settled and on line."
   },
   {
-    "id": "NST-116",
+    "id": "NST-086",
     "category": "History",
     "difficulty": "Medium",
     "question": "What does the title 'National Open Champion' refer to?",
@@ -1204,7 +1204,7 @@
     "explanation": "The National Open Champion is the winner of the main Open Championship."
   },
   {
-    "id": "NST-117",
+    "id": "NST-087",
     "category": "History",
     "difficulty": "Medium",
     "question": "What does a 'Maiden' class generally refer to in sheep dog trialling?",
@@ -1218,7 +1218,7 @@
     "explanation": "Maiden classes generally relate to competitors who have not yet achieved specified wins, subject to the applicable rules."
   },
   {
-    "id": "NST-118",
+    "id": "NST-088",
     "category": "History",
     "difficulty": "Medium",
     "question": "What does an 'Improver' class generally indicate?",
@@ -1232,7 +1232,7 @@
     "explanation": "Improver is generally an intermediate class before full open competition."
   },
   {
-    "id": "NST-119",
+    "id": "NST-089",
     "category": "History",
     "difficulty": "Hard",
     "question": "Who won the 2026 National Improver Championship?",
@@ -1246,7 +1246,7 @@
     "explanation": "Bill Davidson with Wirchilleba Rain won the 2026 National Improver Championship."
   },
   {
-    "id": "NST-120",
+    "id": "NST-090",
     "category": "History",
     "difficulty": "Hard",
     "question": "Who won the 2026 National Maiden Championship?",
@@ -1260,7 +1260,7 @@
     "explanation": "Sarah Sydrych with Windeyer Eliza won the 2026 National Maiden Championship."
   },
   {
-    "id": "NST-121",
+    "id": "NST-091",
     "category": "History",
     "difficulty": "Hard",
     "question": "Who won the 2025 National Maiden Championship?",
@@ -1274,7 +1274,7 @@
     "explanation": "Gary White with Whites Broke won the 2025 National Maiden Championship."
   },
   {
-    "id": "NST-122",
+    "id": "NST-092",
     "category": "History",
     "difficulty": "Hard",
     "question": "Who won the 2025 National Improver Championship?",
@@ -1288,7 +1288,7 @@
     "explanation": "Doug Taylor with MGH Tara won the 2025 National Improver Championship."
   },
   {
-    "id": "NST-123",
+    "id": "NST-093",
     "category": "History",
     "difficulty": "Hard",
     "question": "Who won the 2024 National Maiden Championship?",
@@ -1302,7 +1302,7 @@
     "explanation": "Scott Smith with Wynella Pink won the 2024 National Maiden Championship."
   },
   {
-    "id": "NST-124",
+    "id": "NST-094",
     "category": "History",
     "difficulty": "Hard",
     "question": "Who won the 2024 National Improver Championship?",
@@ -1316,7 +1316,7 @@
     "explanation": "Gary White with White's Billy Boy won the 2024 National Improver Championship."
   },
   {
-    "id": "NST-125",
+    "id": "NST-095",
     "category": "History",
     "difficulty": "Hard",
     "question": "Which handler and dog placed second in the 2023 National Open Championship?",
@@ -1330,7 +1330,7 @@
     "explanation": "John Perry with Bredbo Ash placed second in the 2023 National Open Championship."
   },
   {
-    "id": "NST-126",
+    "id": "NST-096",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
     "question": "How long is allowed for each run in the National Sheep Dog Trial Championship?",
@@ -1344,7 +1344,7 @@
     "explanation": "Each dog is allowed 15 minutes to complete the course."
   },
   {
-    "id": "NST-127",
+    "id": "NST-097",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
     "question": "How many sheep are allocated to each dog during a run?",
@@ -1358,7 +1358,7 @@
     "explanation": "Each dog works three sheep."
   },
   {
-    "id": "NST-128",
+    "id": "NST-098",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "Which side of the casting peg must the competitor leave from after delivery?",
@@ -1372,7 +1372,7 @@
     "explanation": "Competitors must leave on the right-hand side of the casting peg."
   },
   {
-    "id": "NST-129",
+    "id": "NST-099",
     "category": "Rules & Regulations",
     "difficulty": "Hard",
     "question": "What is the penalty if a dog crosses on the cast?",
@@ -1386,7 +1386,7 @@
     "explanation": "Any dog crossing on the cast is disqualified."
   },
   {
-    "id": "NST-130",
+    "id": "NST-100",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "What happens if a dog is recalled after travelling a reasonable distance to prevent a cross and is re-cast?",
@@ -1400,7 +1400,7 @@
     "explanation": "A recalled and re-cast dog incurs a 10 point deduction."
   },
   {
-    "id": "NST-131",
+    "id": "NST-101",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
     "question": "What is the maximum length of a cane that a competitor may use?",
@@ -1414,7 +1414,7 @@
     "explanation": "A cane may not exceed 46 centimetres."
   },
   {
-    "id": "NST-132",
+    "id": "NST-102",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "Can a competitor use a cane to block sheep during the trial?",
@@ -1428,7 +1428,7 @@
     "explanation": "A cane must not be used to create noise or block sheep."
   },
   {
-    "id": "NST-133",
+    "id": "NST-103",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
     "question": "What happens if a dog makes contact with sheep before the bell is rung?",
@@ -1442,7 +1442,7 @@
     "explanation": "Breaking before the bell and contacting sheep results in disqualification."
   },
   {
-    "id": "NST-134",
+    "id": "NST-104",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "What must happen if sheep enter an obstacle from the wrong end?",
@@ -1456,7 +1456,7 @@
     "explanation": "All sheep must be brought clear of the wings before reworking the obstacle."
   },
   {
-    "id": "NST-135",
+    "id": "NST-105",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "What happens if the worker leaves the obstacle circle before all sheep are clear?",
@@ -1470,7 +1470,7 @@
     "explanation": "Leaving the circle early results in disqualification."
   },
   {
-    "id": "NST-136",
+    "id": "NST-106",
     "category": "Rules & Regulations",
     "difficulty": "Hard",
     "question": "What is the highest possible score if a dog fails to negotiate any obstacle?",
@@ -1484,7 +1484,7 @@
     "explanation": "A dog that does not negotiate any obstacle cannot score more than 50 points."
   },
   {
-    "id": "NST-137",
+    "id": "NST-107",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
     "question": "What is the maximum score available for the pen?",
@@ -1498,7 +1498,7 @@
     "explanation": "The pen is worth 10 points."
   },
   {
-    "id": "NST-138",
+    "id": "NST-108",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
     "question": "How many points are allocated to the bridge?",
@@ -1512,7 +1512,7 @@
     "explanation": "The bridge is worth 8 points."
   },
   {
-    "id": "NST-139",
+    "id": "NST-109",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
     "question": "How many points are allocated to the race?",
@@ -1526,7 +1526,7 @@
     "explanation": "The race is worth 7 points."
   },
   {
-    "id": "NST-140",
+    "id": "NST-110",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
     "question": "How many points are allocated to general work?",
@@ -1540,7 +1540,7 @@
     "explanation": "General work is allocated 75 points."
   },
   {
-    "id": "NST-141",
+    "id": "NST-111",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "Can a bitch in season compete in the trial?",
@@ -1554,7 +1554,7 @@
     "explanation": "The rules allow a bitch in season to work."
   },
   {
-    "id": "NST-142",
+    "id": "NST-112",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "What happens if a competitor touches their dog during the run?",
@@ -1568,7 +1568,7 @@
     "explanation": "Touching the dog during the trial results in disqualification."
   },
   {
-    "id": "NST-143",
+    "id": "NST-113",
     "category": "Rules & Regulations",
     "difficulty": "Hard",
     "question": "What happens if the competitor's own dog enters the arena while they are working another dog?",
@@ -1582,7 +1582,7 @@
     "explanation": "The worker will be disqualified."
   },
   {
-    "id": "NST-144",
+    "id": "NST-114",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "What must competitors do when moving between pegs?",
@@ -1596,7 +1596,7 @@
     "explanation": "Competitors must move directly within the course markers."
   },
   {
-    "id": "NST-145",
+    "id": "NST-115",
     "category": "Rules & Regulations",
     "difficulty": "Hard",
     "question": "What penalty applies if a worker retraces their steps after passing a peg?",
@@ -1610,7 +1610,7 @@
     "explanation": "Retracing steps after passing a peg incurs a 1 point deduction."
   },
   {
-    "id": "NST-146",
+    "id": "NST-116",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "What must happen if sheep clear an obstacle before the worker reaches the circle?",
@@ -1624,7 +1624,7 @@
     "explanation": "The obstacle must be worked again correctly."
   },
   {
-    "id": "NST-147",
+    "id": "NST-117",
     "category": "Rules & Regulations",
     "difficulty": "Hard",
     "question": "When does the trial officially terminate?",
@@ -1638,7 +1638,7 @@
     "explanation": "The trial ends once the pen gate is closed."
   },
   {
-    "id": "NST-148",
+    "id": "NST-118",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "Can a dog be penalised for jumping the arena fence to head sheep correctly?",
@@ -1652,7 +1652,7 @@
     "explanation": "A dog may be penalised for leaving the arena even if attempting correct work."
   },
   {
-    "id": "NST-149",
+    "id": "NST-119",
     "category": "Rules & Regulations",
     "difficulty": "Hard",
     "question": "What happens if a dog leaves the arena out of control?",
@@ -1666,7 +1666,7 @@
     "explanation": "An uncontrolled departure from the arena may result in disqualification."
   },
   {
-    "id": "NST-150",
+    "id": "NST-120",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "What is the protest fee for lodging a written protest?",
@@ -1680,7 +1680,7 @@
     "explanation": "A protest must be accompanied by a $50 fee."
   },
   {
-    "id": "NST-151",
+    "id": "NST-121",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
     "question": "Can late entries be accepted?",
@@ -1694,7 +1694,7 @@
     "explanation": "The rules state that no late entries will be accepted."
   },
   {
-    "id": "NST-152",
+    "id": "NST-122",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "What qualification must all handlers meet?",
@@ -1708,7 +1708,7 @@
     "explanation": "Handlers must be financial members of their state working sheepdog association."
   },
   {
-    "id": "NST-153",
+    "id": "NST-123",
     "category": "Rules & Regulations",
     "difficulty": "Medium",
     "question": "Can a nominee work a dog in both the preliminary round and the final?",
@@ -1722,7 +1722,7 @@
     "explanation": "A nominated handler must work the dog in both rounds."
   },
   {
-    "id": "NST-154",
+    "id": "NST-124",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
     "question": "What type of electronic equipment is prohibited on dogs entering the ring?",
@@ -1736,7 +1736,7 @@
     "explanation": "Electric dog collars and replicas are prohibited."
   },
   {
-    "id": "NST-155",
+    "id": "NST-125",
     "category": "Rules & Regulations",
     "difficulty": "Hard",
     "question": "If sheep pass on the left-hand side of a winding peg, what must happen?",
@@ -1750,7 +1750,7 @@
     "explanation": "The sheep must be unwound anti-clockwise once only."
   },
   {
-    "id": "NST-156",
+    "id": "NST-126",
     "category": "Rules & Regulations",
     "difficulty": "Hard",
     "question": "How long can a handlers stick/ cane be in the National Sheep Dog Trial",
@@ -1764,7 +1764,7 @@
     "explanation": "A  handler may use a cane or stick Ònot exceeding 46 centimetres in length\""
   },
   {
-    "id": "NST-157",
+    "id": "NST-127",
     "category": "History",
     "difficulty": "Hard",
     "question": "Which legendary sheepdog won five National Championships between 1946 and 1952 and was described by George Westcott as 'easily the best sheep dog that has worked in a National Sheep Dog Trial Championship'?",
@@ -1778,7 +1778,7 @@
     "explanation": "Johnny won five National Championships and was regarded by George Westcott as the best sheepdog to have worked in a National Championship."
   },
   {
-    "id": "NST-158",
+    "id": "NST-128",
     "category": "History",
     "difficulty": "Medium",
     "question": "What year did Queen Elizabeth II attend the National Sheep Dog Trial Championships and present the Duke of Gloucester Sash?",
@@ -1792,7 +1792,7 @@
     "explanation": "Queen Elizabeth II attended the National Sheep Dog Trial Championships in Canberra in 1970 and presented the Duke of Gloucester Sash."
   },
   {
-    "id": "NST-159",
+    "id": "NST-129",
     "category": "History",
     "difficulty": "Hard",
     "question": "What special national celebration was linked to the 1970 National Sheep Dog Trial Championships?",
@@ -1806,7 +1806,7 @@
     "explanation": "The 1970 championships were conducted as part of the Commonwealth Centenary celebrations. "
   },
   {
-    "id": "NST-160",
+    "id": "NST-130",
     "category": "History",
     "difficulty": "Medium",
     "question": "Which royal trophy was awarded in the National Open Sheep Dog Trial Championship in 1970?",
@@ -1820,7 +1820,7 @@
     "explanation": "The Queen's Trophy was one of the major awards listed for the National Open Championship. "
   },
   {
-    "id": "NST-161",
+    "id": "NST-131",
     "category": "History",
     "difficulty": "Hard",
     "question": "What airline sponsored the Champion of Champions trophy in 1970?",
@@ -1834,7 +1834,7 @@
     "explanation": "TAA advertised that it was proud to fly champions to and from Canberra and sponsor the Champion of Champions trophy. "
   },
   {
-    "id": "NST-162",
+    "id": "NST-132",
     "category": "History",
     "difficulty": "Hard",
     "question": "What was the name of the famous Australian champion sheepdog that won five National Championships and once scored a perfect 100 points?",
@@ -1848,7 +1848,7 @@
     "explanation": "Johnny was the legendary champion sheepdog that won five National Championships and achieved a perfect score of 100 points. "
   },
   {
-    "id": "NST-164",
+    "id": "NST-133",
     "category": "History",
     "difficulty": "Medium",
     "question": "What special anniversary did the National Sheep Dog Trial Championships celebrate in 1988?",
@@ -1862,7 +1862,7 @@
     "explanation": "The 1988 Championships were promoted as the Bicentennial National Sheep Dog Trials. "
   },
   {
-    "id": "NST-165",
+    "id": "NST-134",
     "category": "History",
     "difficulty": "Medium",
     "question": "At which Canberra venue were the National Championships held throughout the late 1980s and 1990s?",
@@ -1876,7 +1876,7 @@
     "explanation": "Programs shown in the journal identify Hall Recreation Oval Canberra as the venue. "
   },
   {
-    "id": "NST-166",
+    "id": "NST-135",
     "category": "History",
     "difficulty": "Hard",
     "question": "Which sponsorship brand appeared prominently in the title of the 1994 National Championships?",
@@ -1890,7 +1890,7 @@
     "explanation": "The 1994 National Championships were sponsored as the Lucky Dog Working Dog Championships. "
   },
   {
-    "id": "NST-167",
+    "id": "NST-136",
     "category": "History",
     "difficulty": "Medium",
     "question": "What major title was awarded alongside the Queen's Trophy and Duke of Gloucester Sash in the 1996 Championships?",
@@ -1904,7 +1904,7 @@
     "explanation": "The 1996 program lists the Governor-General's Sash among the major awards. "
   },
   {
-    "id": "NST-168",
+    "id": "NST-137",
     "category": "History",
     "difficulty": "Hard",
     "question": "What year did the National Sheep Dog Trial Championships hold their Golden Jubilee event?",
