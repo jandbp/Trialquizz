@@ -1928,7 +1928,7 @@
       "Tuesday",
       "Wednesday"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "explanation": "Tuesday is free entry for all at the National!"
   },
   {
@@ -1942,7 +1942,7 @@
       "80 - 90",
       "More than 100"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "explanation": "We have more than 100 volunteers!  email us at natsheepdogtrials@gmail.com if you want to join us."
   }
 ]
