@@ -155,6 +155,29 @@
 
   .no-changes-msg { text-align: center; padding: 2rem; color: var(--ink-muted); font-size: 0.9rem; }
 
+  /* New question modal */
+  .btn-new { border-color: var(--green-mid); color: var(--green-mid); background: var(--green-light); }
+  .btn-new:hover { background: var(--green-mid); color: #fff; }
+  .new-q-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 1.25rem; }
+  .new-q-textarea { width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--ink); background: var(--paper); outline: none; resize: vertical; min-height: 80px; line-height: 1.45; transition: border-color 0.15s, background 0.15s; margin-bottom: 1.25rem; }
+  .new-q-textarea:focus { border-color: var(--green-accent); background: #fff; }
+  .new-opt-row { display: flex; align-items: center; gap: 10px; padding: 0.5rem 0.75rem; border-radius: 9px; border: 1.5px solid var(--border); background: var(--paper); margin-bottom: 8px; transition: border-color 0.15s; }
+  .new-opt-row.correct-ans { border-color: var(--green-mid); background: var(--green-light); }
+  .new-opt-radio { accent-color: var(--green-mid); width: 16px; height: 16px; cursor: pointer; flex-shrink: 0; }
+  .new-opt-letter { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--border); color: var(--ink-muted); font-size: 0.78rem; font-weight: 700; flex-shrink: 0; }
+  .new-opt-row.correct-ans .new-opt-letter { background: var(--green-mid); color: #fff; }
+  .new-opt-input { flex: 1; padding: 0.4rem 0.6rem; border: 1.5px solid transparent; border-radius: 7px; font-family: 'Source Sans 3', sans-serif; font-size: 0.93rem; color: var(--ink); background: transparent; outline: none; transition: border-color 0.15s, background 0.15s; }
+  .new-opt-input:focus { border-color: var(--green-accent); background: #fff; }
+  .new-explanation-textarea { width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem; color: var(--green-dark); background: var(--green-light); outline: none; resize: vertical; min-height: 70px; line-height: 1.55; transition: border-color 0.15s; }
+  .new-explanation-textarea:focus { border-color: var(--green-mid); }
+  .new-field-input, .new-field-select { padding: 0.45rem 0.65rem; border: 1.5px solid var(--border); border-radius: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 0.88rem; color: var(--ink); background: var(--paper); outline: none; width: 100%; transition: border-color 0.15s, background 0.15s; }
+  .new-field-input:focus, .new-field-select:focus { border-color: var(--green-accent); background: #fff; }
+  .new-field-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-muted); margin-bottom: 4px; display: block; }
+  .new-field-group { display: flex; flex-direction: column; gap: 4px; }
+  .form-section-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-muted); margin-bottom: 8px; display: block; }
+  .new-q-error { color: var(--red); font-size: 0.85rem; font-weight: 600; display: none; margin-bottom: 0.75rem; }
+  .new-q-error.visible { display: block; }
+
   @media (max-width: 560px) {
     .meta-grid { grid-template-columns: 1fr 1fr; }
     .search-wrap { margin-left: 0; width: 100%; }
@@ -185,6 +208,7 @@
     <span class="session-label">Session changes:</span>
     <span class="session-count" id="session-count">0</span>
     <div class="session-actions">
+      <button class="btn btn-new" onclick="openNewQuestion()">+ New Question</button>
       <button class="btn btn-amber" onclick="openChangelog()" id="view-changes-btn">View changes</button>
       <button class="btn btn-export" onclick="openExport()" id="export-btn">⬇ Export JSON</button>
     </div>
@@ -238,6 +262,80 @@
     <div class="modal-actions">
       <button class="btn btn-export" onclick="closeChangelog(); openExport()">⬇ Export JSON now</button>
       <button class="btn" onclick="closeChangelog()">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- New Question modal -->
+<div class="modal-overlay" id="new-q-modal">
+  <div class="modal">
+    <h2>✏️ Author New Question</h2>
+    <p class="modal-sub">Fill in all fields then click Add — the question will be added to your session and included in the next export.</p>
+
+    <p class="new-q-error" id="new-q-error"></p>
+
+    <div class="new-q-grid" style="margin-bottom:1.25rem;">
+      <div class="new-field-group">
+        <label class="new-field-label">Question ID <span style="font-weight:400;text-transform:none;letter-spacing:0;">(auto-assigned)</span></label>
+        <input class="new-field-input" id="new-id" readonly style="background:var(--paper);color:var(--ink-muted);cursor:default;font-family:'JetBrains Mono',monospace;font-size:0.8rem;">
+      </div>
+      <div class="new-field-group">
+        <label class="new-field-label">Category</label>
+        <select class="new-field-select" id="new-category">
+          <option value="Trial Basics">Trial Basics</option>
+          <option value="Judging &amp; Scoring">Judging &amp; Scoring</option>
+          <option value="Dog Work &amp; Handling">Dog Work &amp; Handling</option>
+          <option value="Rules &amp; Regulations">Rules &amp; Regulations</option>
+          <option value="Sheep Behaviour">Sheep Behaviour</option>
+          <option value="History">History</option>
+          <option value="Spectator Knowledge">Spectator Knowledge</option>
+        </select>
+      </div>
+      <div class="new-field-group">
+        <label class="new-field-label">Difficulty</label>
+        <select class="new-field-select" id="new-difficulty">
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+      </div>
+    </div>
+
+    <label class="form-section-label">Question</label>
+    <textarea class="new-q-textarea" id="new-question" placeholder="Type your question here…"></textarea>
+
+    <label class="form-section-label">Answer Options — select the correct answer</label>
+    <div id="new-options-list">
+      <div class="new-opt-row correct-ans" id="new-opt-row-0">
+        <input type="radio" class="new-opt-radio" name="new-correct" value="0" checked onchange="newMarkCorrect(0)">
+        <span class="new-opt-letter">A</span>
+        <input class="new-opt-input" id="new-opt-0" placeholder="Option A">
+      </div>
+      <div class="new-opt-row" id="new-opt-row-1">
+        <input type="radio" class="new-opt-radio" name="new-correct" value="1" onchange="newMarkCorrect(1)">
+        <span class="new-opt-letter">B</span>
+        <input class="new-opt-input" id="new-opt-1" placeholder="Option B">
+      </div>
+      <div class="new-opt-row" id="new-opt-row-2">
+        <input type="radio" class="new-opt-radio" name="new-correct" value="2" onchange="newMarkCorrect(2)">
+        <span class="new-opt-letter">C</span>
+        <input class="new-opt-input" id="new-opt-2" placeholder="Option C">
+      </div>
+      <div class="new-opt-row" id="new-opt-row-3">
+        <input type="radio" class="new-opt-radio" name="new-correct" value="3" onchange="newMarkCorrect(3)">
+        <span class="new-opt-letter">D</span>
+        <input class="new-opt-input" id="new-opt-3" placeholder="Option D">
+      </div>
+    </div>
+
+    <div style="padding-top:1.25rem; margin-top:1.25rem; border-top:1px solid var(--border);">
+      <label class="form-section-label">Explanation</label>
+      <textarea class="new-explanation-textarea" id="new-explanation" placeholder="Explain why the correct answer is right…"></textarea>
+    </div>
+
+    <div class="modal-actions" style="margin-top:1.25rem;">
+      <button class="btn btn-discard" onclick="closeNewQuestion()">Cancel</button>
+      <button class="btn btn-save" onclick="addNewQuestion()">+ Add Question</button>
     </div>
   </div>
 </div>
@@ -552,7 +650,7 @@ function openChangelog() {
       <tr>
         <td class="cl-time">${c.savedAt}</td>
         <td class="cl-id">${c.after.id}</td>
-        <td class="cl-q">${c.after.question.substring(0, 60)}${c.after.question.length > 60 ? '…' : ''}</td>
+        <td class="cl-q">${c.before === null ? '<span style="color:var(--green-mid);font-weight:700;">✚ New</span> ' : ''}${c.after.question.substring(0, 55)}${c.after.question.length > 55 ? '…' : ''}</td>
         <td class="cl-fields">${c.fields.join(', ')}</td>
       </tr>`).join('');
     content.innerHTML = `
@@ -611,7 +709,103 @@ function downloadJson() {
   URL.revokeObjectURL(url);
 }
 
-// Keyboard nav
+// ── NEW QUESTION ──
+function nextAutoId() {
+  // Collect every numeric suffix from all existing IDs including session additions
+  const usedNums = new Set(
+    allQuestions
+      .map(q => parseInt((q.id || '').replace(/\D/g, ''), 10))
+      .filter(n => !isNaN(n))
+  );
+  // Start from max+1 and skip any gaps that are already used
+  let next = usedNums.size ? Math.max(...usedNums) + 1 : 1;
+  while (usedNums.has(next)) next++;
+  return 'NST-' + String(next).padStart(3, '0');
+}
+
+function openNewQuestion() {
+  // Pre-fill auto ID
+  document.getElementById('new-id').value = nextAutoId();
+  // Reset form
+  document.getElementById('new-question').value = '';
+  document.getElementById('new-explanation').value = '';
+  [0,1,2,3].forEach(i => {
+    document.getElementById(`new-opt-${i}`).value = '';
+  });
+  // Reset correct answer to A
+  document.querySelector('input[name="new-correct"][value="0"]').checked = true;
+  newMarkCorrect(0);
+  document.getElementById('new-q-error').classList.remove('visible');
+  document.getElementById('new-q-modal').classList.add('visible');
+}
+
+function closeNewQuestion() {
+  document.getElementById('new-q-modal').classList.remove('visible');
+}
+
+function newMarkCorrect(idx) {
+  for (let i = 0; i < 4; i++) {
+    const row = document.getElementById(`new-opt-row-${i}`);
+    const letter = row.querySelector('.new-opt-letter');
+    if (i === idx) {
+      row.classList.add('correct-ans');
+      letter.style.background = 'var(--green-mid)'; letter.style.color = '#fff';
+    } else {
+      row.classList.remove('correct-ans');
+      letter.style.background = ''; letter.style.color = '';
+    }
+  }
+}
+
+function addNewQuestion() {
+  const errEl = document.getElementById('new-q-error');
+  errEl.classList.remove('visible');
+
+  const id       = document.getElementById('new-id').value.trim();
+  const category = document.getElementById('new-category').value;
+  const difficulty = document.getElementById('new-difficulty').value;
+  const question = document.getElementById('new-question').value.trim();
+  const options  = [0,1,2,3].map(i => document.getElementById(`new-opt-${i}`).value.trim());
+  const explanation = document.getElementById('new-explanation').value.trim();
+
+  let correctAnswer = 0;
+  document.querySelectorAll('input[name="new-correct"]').forEach(r => {
+    if (r.checked) correctAnswer = parseInt(r.value);
+  });
+
+  // Validate
+  // ID is auto-assigned and guaranteed unique — no validation needed
+  if (!question) { errEl.textContent = 'Please enter the question text.'; errEl.classList.add('visible'); return; }
+  if (options.some(o => !o)) { errEl.textContent = 'Please fill in all four answer options.'; errEl.classList.add('visible'); return; }
+  if (!explanation) { errEl.textContent = 'Please enter an explanation.'; errEl.classList.add('visible'); return; }
+
+  const newQ = { id, category, difficulty, question, options, correctAnswer, explanation };
+
+  allQuestions.push(newQ);
+
+  // Log to session as a new addition
+  sessionChanges.set(id, {
+    before: null,
+    after: newQ,
+    savedAt: new Date().toLocaleTimeString(),
+    fields: ['NEW QUESTION'],
+  });
+
+  updateCounts();
+  updateSessionBanner();
+  applyFilter();
+
+  // Jump to the new question (it'll be last in the filtered list if filter allows)
+  const newIdx = filtered.findIndex(q => q.id === id);
+  if (newIdx >= 0) {
+    currentIndex = newIdx;
+    render();
+  }
+
+  closeNewQuestion();
+}
+
+// ── KEYBOARD NAV
 document.addEventListener('keydown', e => {
   if (['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)) return;
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown') go(1);
