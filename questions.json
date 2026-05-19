@@ -1945,4 +1945,130 @@
     "correctAnswer": 3,
     "explanation": "We have more than 100 volunteers!  email us at natsheepdogtrials@gmail.com if you want to join us."
   }
+{
+    "id": "NST-140",
+    "category": "Trial Classes",
+    "difficulty": "Easy",
+    "question": "What is a Maiden (Novice) sheep dog trial?",
+    "options": [
+      "A trial for dogs that have not won a maiden or novice trial",
+      "A trial only for young handlers",
+      "A championship final",
+      "A trial without obstacles"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Maiden or Novice trials are intended for dogs that have not yet won at that level."
+  },
+  {
+    "id": "NST-141",
+    "category": "Trial Classes",
+    "difficulty": "Easy",
+    "question": "Which dogs are eligible for an Improver Trial?",
+    "options": [
+      "Dogs that have never competed",
+      "Dogs that have won a maiden or novice trial",
+      "Only dogs that have won an Open",
+      "Only imported dogs"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Improver dogs have already won at Maiden or Novice level."
+  },
+  {
+    "id": "NST-142",
+    "category": "Trial Classes",
+    "difficulty": "Easy",
+    "question": "What level is above Improver in the class structure?",
+    "options": [
+      "Junior",
+      "Novice",
+      "Open",
+      "Beginner"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Open is generally the highest regular competition level."
+  },
+  {
+    "id": "NST-143",
+    "category": "Trial Classes",
+    "difficulty": "Easy",
+    "question": "What usually qualifies a dog to compete in an Open Trial?",
+    "options": [
+      "Winning an Improver trial",
+      "Completing one Maiden run",
+      "Being under two years old",
+      "Competing at Nationals"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Dogs entered in Open have generally won an Improver trial."
+  },
+  {
+    "id": "NST-144",
+    "category": "Trial Classes",
+    "difficulty": "Medium",
+    "question": "Can a dog compete in both Improver and Open classes at the same time?",
+    "options": [
+      "No",
+      "Only at local trials",
+      "Yes",
+      "Only with judge approval"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The rules allow dogs to be entered in both Improver and Open simultaneously."
+  },
+  {
+    "id": "NST-145",
+    "category": "Trial Classes",
+    "difficulty": "Easy",
+    "question": "Why do sheep dog trials use class systems such as Maiden, Improver and Open?",
+    "options": [
+      "To group dogs by experience and achievement",
+      "To separate dogs by breed",
+      "To reduce the number of sheep needed",
+      "To determine wool quality"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Classes help create fair competition between dogs of similar achievement."
+  },
+  {
+    "id": "NST-146",
+    "category": "Trial Classes",
+    "difficulty": "Medium",
+    "question": "What is the main difference between a Maiden dog and an Improver dog?",
+    "options": [
+      "An Improver dog has already won at Maiden or Novice level",
+      "A Maiden dog is older",
+      "An Improver dog must compete in Open only",
+      "A Maiden dog cannot use whistles"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Improver dogs have already achieved wins at the lower level."
+  },
+  {
+    "id": "NST-147",
+    "category": "Trial Classes",
+    "difficulty": "Easy",
+    "question": "Which class is generally regarded as the premier competition level?",
+    "options": [
+      "Maiden",
+      "Novice",
+      "Improver",
+      "Open"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Open is generally regarded as the top competitive level."
+  },
+  {
+    "id": "NST-148",
+    "category": "Trial Classes",
+    "difficulty": "Medium",
+    "question": "A dog that has never won a sheep dog trial would usually begin in which class?",
+    "options": [
+      "Open",
+      "Champion of Champions",
+      "Maiden or Novice",
+      "Improver"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Dogs usually begin in Maiden or Novice competition."
+  },
 ]
