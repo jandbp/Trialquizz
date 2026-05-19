@@ -255,7 +255,7 @@
     "id": "NST-019",
     "category": "Rules & Regulations",
     "difficulty": "Easy",
-    "question": "What obstacle requires sheep to cross over water or a gully?",
+    "question": "What obstacle represents sheep crossing over water or a gully?",
     "options": [
       "Race",
       "Gate",
@@ -313,13 +313,13 @@
     "difficulty": "Easy",
     "question": "What breed is most commonly associated with Australian sheep dog trialling?",
     "options": [
-      "Australian Shepherd",
       "Kelpie",
+      "Border Collie",
       "German Shepherd",
       "Heeler"
     ],
     "correctAnswer": 1,
-    "explanation": "The Australian Kelpie is strongly associated with sheep dog trialling."
+    "explanation": "Border Collies tend to feature most at the National but Kelpies are also common."
   },
   {
     "id": "NST-024",
@@ -697,7 +697,7 @@
       "Darwin"
     ],
     "correctAnswer": 0,
-    "explanation": "The National Sheep Dog Trial Championships have a long association with Canberra."
+    "explanation": "The National Sheep Dog Trial Championships has always been held in Canberra."
   },
   {
     "id": "NST-051",
@@ -1402,7 +1402,7 @@
   {
     "id": "NST-101",
     "category": "Rules & Regulations",
-    "difficulty": "Easy",
+    "difficulty": "Medium",
     "question": "What is the maximum length of a cane that a competitor may use?",
     "options": [
       "30 cm",
@@ -1682,7 +1682,7 @@
   {
     "id": "NST-121",
     "category": "Rules & Regulations",
-    "difficulty": "Easy",
+    "difficulty": "Medium",
     "question": "Can late entries be accepted?",
     "options": [
       "Yes",
@@ -1921,7 +1921,7 @@
     "id": "NST-138",
     "category": "Trial Basics",
     "difficulty": "Easy",
-    "question": "What day is entry free at the National",
+    "question": "What day is entry free at the National?",
     "options": [
       "None",
       "Monday",
