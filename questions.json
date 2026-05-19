@@ -1945,7 +1945,7 @@
     "correctAnswer": 3,
     "explanation": "We have more than 100 volunteers!  email us at natsheepdogtrials@gmail.com if you want to join us."
   },
-{
+  {
     "id": "NST-140",
     "category": "Trial Classes",
     "difficulty": "Easy",
@@ -2070,5 +2070,5 @@
     ],
     "correctAnswer": 2,
     "explanation": "Dogs usually begin in Maiden or Novice competition."
-  },
+  }
 ]
