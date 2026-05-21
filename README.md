@@ -1,1 +1,1 @@
-A simple quizz app for the NSDTA
+A simple quiz app for the NSDTA
